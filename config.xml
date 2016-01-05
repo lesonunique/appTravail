@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="fr.frap.sunradio" version="2.9.5" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="fr.frap.sunradio" version="2.9.5" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:gap>
     <name>SUN</name>
     <description>
         Pour la première fois en France, MySUN vous permet de prendre instantanément le contrôle de votre radio (FM/RNT/WEB), de dédicacer un morceau et de le partager avec vos amis. Les nouveaux talents ont aussi la possibilité de se faire connaitre grâce à ce service...
@@ -46,12 +46,12 @@
 	<gap:plugin name="cordova-plugin-x-socialsharing" source="npm" />
 	<gap:plugin name="pushbots-cordova-plugin" source="npm" />
 	
-	<!--<gap:icon src="images/logos/winphone/62x62.png" gap:platform="winphone" />
+	<gap:icon src="images/logos/winphone/62x62.png" gap:platform="winphone" />
 	<gap:icon src="images/logos/winphone/173x173.png" gap:platform="winphone" gap:role="background" />
 	<gap:icon src="icon.png" />
 	
 	<gap:splash src="images/splash/winphone/480x800.jpg" gap:platform="winphone" />
-	<gap:splash src="splash.png" />-->
+	<gap:splash src="splash.png" />
 	
 	<gap:config-file platform="winphone" parent="/Deployment" mode="replace">
 		<Languages xmlns="">
