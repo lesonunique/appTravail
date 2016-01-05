@@ -44,7 +44,7 @@
 	<gap:plugin name="cordova-plugin-x-toast" source="npm" />
 	<gap:plugin name="hu.dpal.phonegap.plugins.contactnumberpicker" spec="0.1.1" source="pgb" />
 	<gap:plugin name="cordova-plugin-uniquedeviceid" source="npm" />
-	<gap:plugin name="nl.x-services.plugins.socialsharing" source="plugins.cordova.io" />
+	<gap:plugin name="cordova-plugin-x-socialsharing" source="npm" />
 	<gap:plugin name="pushbots-cordova-plugin" source="npm" />
 	
 	<icon src="images/logos/winphone/62x62.png" gap:platform="winphone" />
