@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MySun</title>
+
+<!-- SMART BANNER -->
+<meta name="author" content="SUN, Inc.">
+<meta name="apple-itunes-app" content="app-id=937219562">
+<meta name="google-play-app" content="app-id=fr.frap.sunradio">
+<meta name="msApplication-ID" content="App" />
+<meta name="msApplication-TileImage" content="images/google_sun.png" />
+<meta name="msApplication-PackageFamilyName" content="12835SUNRadioNantes.MySUN_ts17mymjg6gey" />
+<meta name="msApplication-WinPhonePackageUrl" content="app-id=4142eee1-6b05-4f1f-bec2-d11b641b7f8e" />
+<link rel="stylesheet" href="smartbanner/jquery.smartbanner.css" type="text/css" media="screen">
+<link rel="apple-touch-icon" href="images/google_sun.png" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Security-Policy" content="default-src *; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimum-scale=1">
+
+<style type="text/css">
+body{
+	margin:0;padding:0;
+    height: 100%;
+    overflow: scroll;
+}
+#presFullScreen, #texteTuto1, #texteTuto2, #texteTuto3, #tutoFullScreen, #page_login, #page_register, #page_mdp_oublie, #page_profil, #page_profil2, #page_profil3, #page_message_user, #page_diffuses, #page_playlist, #page_podcasts, #page2_podcasts, #page3_podcasts, #page_videos, #page_embed_video, #page_informations, #page_contact, #page_dedicace, #page_tweets/*, #page_direct*/ {
+	display: none;
+}
+</style>
+
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="css/bootstrap-clockpicker.css">
+<link rel="stylesheet" href="css/switch.css"/>
+
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link rel="stylesheet" href="css/style.css"/>
+<link rel="stylesheet" href="css2/JsPlayer/screen.css" />
+<link rel="stylesheet" href="css2/style.css" />
+
+<script type="text/javascript" src="js2/jquery/111/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="js2/jquery/111/jquery-ui.min.js"></script>
+
+<script type="text/javascript" src="js/modernizr.custom.73869.js"></script>
+
+<script type="text/javascript" src="js/login.js"></script>
+<script type="text/javascript" src="js/jquery.easing.js"></script>
+<script type="text/javascript" src="js/jquery.ulslide.js"></script>
+
+
+<script type="text/javascript" src="js/jquery.mmenu.min.js"></script>  
+<link type="text/css" href="css/mmenu.css" rel="stylesheet" media="all" />
+<!--<link href="css/jquery.mmenu.dragopen.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="js/hammer.min.js" ></script>
+<script type="text/javascript" src="js/jquery.mmenu.dragopen.min.js" ></script>-->
+<script type="text/javascript">
+$(function() {
+	$('nav#menu').mmenu(/*{
+            dragOpen: {
+               // drag open options
+			   open:true
+            }
+         }*/);
+});
+</script>
+
+<link rel="stylesheet" href="css/tuto.css"/>
+
+<script type="text/javascript" src="drupalgap/jdrupal-7.x-1.2.js"></script>
+<script type="text/javascript" src="drupalgap/drupalgap-7.x-1.0.js"></script>
+<script type="text/javascript" src="drupalgap/logintoboggan.js"></script>
+<script type="text/javascript" src="drupalgap/flag.js"></script>
+<script type="text/javascript" src="drupalgap/rate.js"></script>
+<script type="text/javascript" src="drupalgap/settings.js"></script>
+<script type="text/javascript" src="drupalgap/js.cookie.js"></script>
+
+<script src="js/moment.js"></script>
+<script>
+    moment().format();
+</script>
+
+<script src="js/facebook.js"></script>
+<script src="js/openfb.js"></script>
+
+<link href="css/ripple.css" rel="stylesheet" type="text/css" media="all"/>
+<script type="text/javascript" src="js/ripple.js"></script>
+
+<link link rel="stylesheet" href="app-gear/css/gear.css">
+
+<link href="usquare/css/style.css" rel="stylesheet" type="text/css" />
+<link href="usquare/fonts/ostrich%20sans/stylesheet.css" rel="stylesheet" type="text/css" />
+<link href="usquare/css/usquare_style.css" rel="stylesheet" type="text/css" />
+<link href="usquare/css/jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css" />
+<script src="usquare/scripts/jquery.mousewheel.min.js"></script>
+<script src="usquare/scripts/jquery.mCustomScrollbar.min.js"></script>
+<script src="usquare/scripts/jquery.usquare.js" type="text/javascript" charset="UTF-8"></script>
+
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="jembe.js"></script>
+<!--<script type="text/javascript">
+	 jembe_debug();
+    if (typeof console == "undefined") {
+        window.console = {log: function() {}};
+    }
+</script>-->
+
+<link rel="stylesheet" href="profil/css/normalize.css">
+<link rel="stylesheet" href="profil/css/styleProfil.css" media="screen" type="text/css" />
+
+<link href="date-time-picker/css/bootstrap-datetimepicker.css" rel="stylesheet" type="text/css" media="all"/>
+
+</head>
+<body>
+
+<div id="presFullScreen">
+	<div id="page1">
+        <div id="tuto1"><img src="images/tuto/1.png" /></div>
+        <div id="tuto1-1">
+            <p class="titleTuto">Bienvenue sur MySun</p>
+            <p class="txtTuto">Découvrez le multi-flux,<br/>écoutez selon vos envies</p>
+        </div>
+        <div id="tuto1-2">
+            <div class="part1" onclick="tuto.closeTuto();">IGNORER</div>
+            <div class="part2"><span class="point1"><img src="images/tuto/point.png" onclick="tuto.goStep(1);" /></span><span class="point2"><img src="images/tuto/point.png" onclick="tuto.goStep(2);" /></span><span class="point3"><img src="images/tuto/point.png" onclick="tuto.goStep(3);" /></span><span class="point4"><img src="images/tuto/point.png" onclick="tuto.goStep(4);" /></span></div>
+            <div class="part3"><img onclick="tuto.goStep(2);" src="images/tuto/fleche.png" /></div>
+        </div>
+    </div>
+    <div id="page2">
+        <div id="tuto2"><img src="images/tuto/2.png" /></div>
+        <div id="tuto2-1">
+            <p class="titleTuto">Créez et gérez votre playlist</p>
+            <p class="txtTuto">Découvrez des morceaux à l’antenne<br/>et synchronisez votre playlist SUN</p>
+        </div>
+        <div id="tuto2-2">
+            <div class="part1" onclick="tuto.closeTuto();">IGNORER</div>
+            <div class="part2"><span class="point1"><img src="images/tuto/point.png" onclick="tuto.goStep(1);" /></span><span class="point2"><img src="images/tuto/point.png" onclick="tuto.goStep(2);" /></span><span class="point3"><img src="images/tuto/point.png" onclick="tuto.goStep(3);" /></span><span class="point4"><img src="images/tuto/point.png" onclick="tuto.goStep(4);" /></span></div>
+            <div class="part3"><img onclick="tuto.goStep(3);" src="images/tuto/fleche.png" /></div>
+        </div>
+    </div>
+    <div id="page3">
+        <div id="tuto3"><img src="images/tuto/3.png" /></div>
+        <div id="tuto3-1">
+            <p class="titleTuto">Dédicacez vos morceaux</p>
+            <p class="txtTuto">Diffusez vos morceaux sur l’antenne<br/>et partagez les avec vos amis</p>
+        </div>
+        <div id="tuto3-2">
+            <div class="part1" onclick="tuto.closeTuto();">IGNORER</div>
+            <div class="part2"><span class="point1"><img src="images/tuto/point.png" onclick="tuto.goStep(1);" /></span><span class="point2"><img src="images/tuto/point.png" onclick="tuto.goStep(2);" /></span><span class="point3"><img src="images/tuto/point.png" onclick="tuto.goStep(3);" /></span><span class="point4"><img src="images/tuto/point.png" onclick="tuto.goStep(4);" /></span></div>
+            <div class="part3"><img onclick="tuto.goStep(4);" src="images/tuto/fleche.png" /></div>
+        </div>
+    </div>
+    <div id="page4">
+        <div id="tuto4"><img src="images/tuto/4.png" /></div>
+        <div id="tuto4-1">
+            <p class="titleTuto">Créez un compte</p>
+            <p class="txtTuto">Choisissez vos flux préférés<br/>dans vos réglages du profil SUN</p>
+        </div>
+        <div id="tuto4-2">
+            <div class="part1"></div>
+            <div class="part2"><span class="point1"><img src="images/tuto/point.png" onclick="tuto.goStep(1);" /></span><span class="point2"><img src="images/tuto/point.png" onclick="tuto.goStep(2);" /></span><span class="point3"><img src="images/tuto/point.png" onclick="tuto.goStep(3);" /></span><span class="point4"><img src="images/tuto/point.png" onclick="tuto.goStep(4);" /></span></div>
+            <div class="part3"><img onclick="tuto.closeTuto();" src="images/tuto/fleche.png" /></div>
+        </div>
+    </div>
+</div>
+
+<div id="texteTuto1">Pour accéder à de nombreuses fonctionnalités, <span onclick="goRegisterForm();" class="bold lien">Inscrivez-vous</span> ou <span onclick="goLoginForm();" class="bold lien">Connectez-vous</span> avec votre compte SUN ou avec votre <span onclick="ConnectLogin.connectFace();" class="bold lien">Compte facebook</span><br/><br/><span class="separationOu">-- ou --</span><br/><br/><span onclick="tuto.tutoPart2();" class="bold lien">Continuer le tutoriel</span></div>
+
+<div id="texteTuto2">Dédicacez un titre sur l'antenne de SUN grâce au bouton central <span class="bold">MySun</span><br/><br/><span class="separationOu">---</span><br/><br/><span onclick="tuto.closeTuto2();" class="bold lien">Non merci, pas maintenant</span></div>
+
+<div id="texteTuto3"><span class="bold">Selectionnez l'heure</span> en choisissant une heure de <span class="bold vert">couleur verte</span><br/><br/><span onclick='tuto.closeTuto3();' class='bold lien'>Masquer le message tutoriel</span></div>
+
+<div id="tutoFullScreen"></div>
+		       
+<div class="wrap">	 
+	<div class="header">
+		<div class="header_top">
+			<div class="menu-ico"><a href="#menu"></a></div>
+            <div class="menu-name"><a href="#menu"><img src="images/sunTxt.png" alt="SUN" /></a></div>
+			<div class="profile_details">
+				<div id="loginContainer">
+					<!--<a id="loginButton" class=""><span>Me</span></a>  -->
+                    <span id="loginButton" class="profile_img"><img src="images/profile_img40x40.png" id="img_1" class="superpose" alt="" /><img src="images/userHL.png" id="img_2" class="superpose" alt="" /></span>  
+					<div id="loginBox">                
+						<form id="loginForm">
+							<fieldset id="body">
+								<div class="user-info">
+                                    <h4 id="statutLoginUser">Connexion</h4>
+									<ul id="buttonLoginUser">
+                                        <li class="profile0 active"><a href="#" data-role="button" id="button_signin" onclick="goRegisterForm();">Sign In </a></li>
+                                        <li class="logout0"><a href="#" data-role="button" id="button_login" onclick="goLoginForm();"> Login</a></li>
+                                        <li class="facebook" onclick="ConnectLogin.connectFace();"><img src="images/facebook-icon.png" /></li>
+                                        <div class="clear"></div>
+									</ul>
+								</div>			                            
+							</fieldset>
+						</form>
+					</div>
+				</div>
+				<div class="clear"></div>		  	
+			</div>	
+			<div class="clear"></div>				 
+		</div>
+	</div>	  					     
+</div>	  
+
+<div id="scroller" class="gearWrap">
+	<div id="gearContainer" class="gear" data-gear="app-gear/json/setup.json"></div>
+</div>
+
+<div class="main">  
+	<div id="container" class="wrap">
+    
+    <div id="messageFlottant">
+    	<div id="messageFlottantText" class="connectText"></div>
+    	<div id="messageFlottantImg" style="display:none;" class="connectImg" onclick="document.getElementById('messageFlottant').style.display = 'none';"></div>
+    </div>
+    
+    
+    	<div class="boxDiv" id="page_register">
+        	<div style="padding-top:10px;" class="signin_facebook">
+				<p><a href="#" onclick="ConnectLogin.connectFace();">  <i> <img src="images/facebook.png" alt="" /></i>Inscription avec facebook</a></p>
+			</div>
+            <!--<div class="signin_twitter">
+				<p><a href="#">  <i> <img src="images/twitter.png" alt="" /></i>Connexion avec twitter</a></p>
+			</div>-->
+            <div style="color:white;padding-top:20px;">--- ou ---</div>
+			<div id="scroller" class="form-style-5">
+            	<form id="form_id">
+				<table width="100%" cellpadding="5" cellspacing="0" border="0">
+					<tr>
+						<td align="center"><div class="icone" data-icon="&#xe070;"></div></td>
+						<td><input type="text" id="user_register" placeholder="Identifiant" class="c_input" /></td>
+					</tr>
+                    <tr>
+						<td align="center"><div class="icone" data-icon="&#xe070;"></div></td>
+						<td><input type="password" id="password_register" placeholder="Mot de passe" class="c_input" /></td>
+					</tr>
+                    <tr>
+						<td align="center"><div class="icone" data-icon="&#xe070;"></div></td>
+						<td><input type="text" id="email_register" placeholder="Email" class="c_input" /></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td align="right"><button onclick="ConnectLogin.sendFormRegister();" class="c_input_submit ripple" id="envoiFormulaire">Inscription</button></td>
+					</tr>
+				</table>
+                </form>
+			</div>				   
+		</div> 
+    
+    	<div class="boxDiv" id="page_login">
+        	<div style="padding-top:10px;" class="signin_facebook">
+				<p><a href="#" onclick="ConnectLogin.connectFace();">  <i> <img src="images/facebook.png" alt="" /></i>Connexion avec facebook</a></p>
+			</div>
+            <!--<div class="signin_twitter">
+				<p><a href="#">  <i> <img src="images/twitter.png" alt="" /></i>Connexion avec twitter</a></p>
+			</div>-->
+            <div style="color:white;padding-top:20px;">--- ou ---</div>
+			<div id="scroller" class="form-style-5">
+				<table width="100%" cellpadding="5" cellspacing="0" border="0">
+					<tr>
+						<td align="center"><div class="icone" data-icon="&#xe070;"></div></td>
+						<td><input type="text" id="user_login" placeholder="Identifiant ou Mail" class="c_input" /></td>
+					</tr>
+                    <tr>
+						<td align="center"><div class="icone" data-icon="&#xe070;"></div></td>
+						<td><input type="password" id="password_login" placeholder="Mot de passe" class="c_input" /></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td align="right"><button onclick="ConnectLogin.sendForm();" class="c_input_submit ripple" id="envoiFormulaire">Connexion</button></td>
+					</tr>
+				</table>
+                <h4><a href="#" onclick="goRetrieveMDP();">Mot de passe oublié ?</a></h4>
+			</div>				   
+		</div> 
+        
+        <div class="boxDiv" id="page_mdp_oublie">
+			<div id="scroller" class="form-style-5">
+				<table width="100%" cellpadding="5" cellspacing="0" border="0">
+					<tr>
+						<td align="center"><div class="icone" data-icon="&#xe070;"></div></td>
+						<td><input type="text" id="user_login_mdp_perdu" placeholder="Identifiant ou Mail" class="c_input" /></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td align="right"><button onclick="ConnectLogin.goMDPperdu();" class="c_input_submit ripple" id="envoiFormulaire">Retrouver Mot de passe</button></td>
+					</tr>
+				</table>
+			</div>				   
+		</div>
+                
+        <div class="boxDiv" id="page_profil">
+            <div id="profilcard" class="card">     
+       		
+            </div>
+        </div>
+        
+        <div class="boxDiv" id="page_profil2">
+        	<div id="profilcard2" class="card">   
+        		
+			</div>
+        </div>
+        
+        <div class="boxDiv" id="page_profil3">
+        	<div id="profilcard3" class="card"> 
+
+        	</div>
+        </div>
+        
+        <div class="boxDiv" id="page_message_user">
+			
+        </div>
+    
+		<div class="boxDiv page" id="page_direct">
+        	<!--<div id="page_direct_bg">-->
+			<div id="player_picture" class="album" onclick="Direct.choixFacebookTwitter();">
+                <div id="gAlbumCover" class="cover" style="opacity: 1;"></div>
+                <div id="gAlbumGroup" class="albumgroup"></div>  
+                <div id="gAlbumPlaylist" class="albumPlaylist"></div>
+            </div>
+            
+            <!--<img src="images/player/music.png" class="icon1" border="0" id="btn_dedicace_sun" onclick="lancerNotification();" />-->
+            <img src="images/player/music.png" class="icon1" border="0" id="btn_dedicace_sun" class="btn_dedicace_all" onclick="Dedicace.launch(1);" />
+            <img src="images/player/musicnoel.png" class="icon1" border="0" id="btn_dedicace_noel" class="btn_dedicace_all" onclick="Dedicace.launch(2);" style="display:none;" />
+            <img src="images/player/musicsports.png" class="icon1" border="0" id="btn_dedicace_sports" class="btn_dedicace_all" onclick="Dedicace.launch(3);" style="display:none;" />
+            <img src="images/player/music10080.png" class="icon1" border="0" id="btn_dedicace_10080" class="btn_dedicace_all" onclick="Dedicace.launch(4);" style="display:none;" />
+            <img src="images/player/musicfranco.png" class="icon1" border="0" id="btn_dedicace_franco" class="btn_dedicace_all" onclick="Dedicace.launch(5);" style="display:none;" />
+            <img src="images/player/music.png" class="icon1" border="0" id="btn_dedicace_sun2" class="btn_dedicace_all" onclick="Dedicace.launch(1);" style="display:none;" />
+            <div id="btn_player_gear2">
+            	<img src="images/flatPlayer/reduire.png" onclick="reduireBarre();" />
+            </div>
+            <div id="btn_player_gear">
+            	<span id="btn_ajout_playlist"><img src="images/flatPlayer/playlistNO.png" class="add" onclick="addToMyPlaylistOFF();" /></span> 
+                <span id="btn_dislike"><img src="images/flatPlayer/dislikeNO.png" class="dislike" onclick="VoteOFF(2);" /></span> 
+                <span id="btn_play_pause"><img src="images/flatPlayer/PlayerPLAY.png" class="play" onclick="pausegear();" /></span> 
+                <span id="btn_like"><img src="images/flatPlayer/likeNO.png" class="like" onclick="VoteOFF(2);" /></span>
+                <span id="btn_volume_mute_up"><img src="images/flatPlayer/volumeUP.png" class="up" onclick="mutegear();" /></span>
+            </div>
+		</div>
+        
+        <div class="boxDiv" id="page_diffuses">
+            <div id="scroller">
+            	<div class="container">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <div class="input-group date" id="datetimepicker">
+                                <input type='text' id="dateRechercheTitres" class="form-control" disabled="disabled" />
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar">
+                                    </span>
+                                </span>
+                            </div>
+                            <!--<button id="button_recherchetitres" onclick="rechercheTitresParDate();">Recherche titres</button>-->
+                        </div>
+                    </div>
+                    <script type="text/javascript">
+                        $(function () {
+                            $('#datetimepicker').datetimepicker({
+                                viewMode: 'days',
+                				sideBySide: false,
+								minDate: moment({ hour:00, minute:00 }).subtract(2, 'months').format('MM/DD/YYYY HH:mm'),
+								maxDate: moment({ hour:23, minute:59 }).format('MM/DD/YYYY HH:mm'),
+								stepping: 5,
+								format: 'DD/MM/YYYY HH:mm',
+								useCurrent: false,
+								focusOnShow:true,
+								/*defaultDate:'moment',*/
+								showClose:true,
+								toolbarPlacement:'bottom',
+								icons: {
+									close: 'glyphicon glyphicon-ok'
+								}
+                            });
+							
+							$('#dateRechercheTitres').val(moment().format('DD/MM/YYYY HH:mm'));
+                        });
+                    </script>
+                </div>
+                <div style="background: #35aadc none repeat scroll 0 0; border-radius: 5px 5px 0 0; color: #fff; font-size: 1em; padding: 15px 0 15px; text-align: center; text-transform: uppercase;" id="choixfluxtitres">SUN Nantes</div>
+                <div id="titre_diffus">
+                
+                </div>
+            </div>
+		</div>
+        
+		<div class="boxDiv" id="page_playlist">
+            <div id="scroller">
+                <div id="playlist_content">
+                	<div class="title2">
+                        <div style="padding-bottom:15px;">LA PAGE PLAYLIST EST ACCESSIBLE UNIQUEMENT EN ÉTANT CONNECTÉ</div>
+                        <div>Pour accéder à votre playlist, merci de vous connecter ou de vous inscrire</div>
+                    </div>
+					<div><a id="button_signin" onclick="goRegisterForm();" data-role="button" href="#">Sign In </a><a id="button_login" onclick="goLoginForm();" data-role="button" href="#"> Login</a></div>
+                </div>
+            </div>
+		</div>
+        
+		<div class="boxDiv" id="page_podcasts">
+        	<!--<div class="articles_list">
+		    	<ul>
+		    		<li class="boutonsPodPhonegap"><a href="javascript:" onclick="goPodcasts1();" class="purple selected"> <img src="images/clouds.png" alt="Online" /><br/>Online</a></li>
+		    		<li id="podPhonegap" class="boutonsPodPhonegap" style="display:none;"><a href="javascript:" onclick="goPodcasts2();" class="yellow"> <img src="images/download.png" alt="Offline" /><br/>Offline</a></li>
+                    <li class="boutonsPodPhonegap"><a href="javascript:" onclick="goPodcasts3();" class="red"> <img src="images/likes.png" alt="Mes abonnements" /><br/>My pods</a></li>
+		    		<div class="clear"></div>	
+		    	</ul>
+		    </div>-->
+            <div id="page1_podcasts">
+                <div id="date_podcasts"><a href="javascript:" onclick="Podcasts.changeDate('moins');"><img src="images/arrow-left.png" border="0"/></a> <span id="date_list"></span> <a href="javascript:" onclick="Podcasts.changeDate('plus');" id="dateSup"><img src="images/arrow-right.png" border="0"/></a></div>
+                <div id="scroller" style="height:auto;background:white;"><div align="center" style="margin-top:50px;"><img src="images/player/301.gif" width="64" /></div></div>
+                <div id="player_podcasts"></div>
+                <div id="voile" style="background:rgba(0,0,0,.5);position:absolute;bottom:0;top:0;right:0;left:0;z-index:2;display:none;"></div>
+            </div>
+            <!--<div id="page2_podcasts">
+                <div id="scroller2" style="height:auto;background:white;"><div align="center" style="margin-top:50px;"><img src="images/player/301.gif" width="64" /></div></div>
+                <div id="player_podcasts"></div>
+            </div>
+            <div id="page3_podcasts">
+                <div id="scroller3" style="height:auto;background:white;"><div align="center" style="margin-top:50px;"><img src="images/player/301.gif" width="64" /></div></div>
+                <div id="player_podcasts"></div>
+            </div>-->
+           
+		</div>
+        
+        <div class="boxDiv page" id="page_videos">
+        	<div id="date_podcasts" style="padding-top:15px;">Videos</div>
+            <div id="scroller">
+                <div align="center" style="margin-top:50px;"><img src="images/player/301.gif" width="64" /></div>
+            </div>
+        </div>
+
+        <div class="boxDiv page" id="page_embed_video" style="overflow:hidden;">
+            <div id="scroller">
+            	<div id="buttonBackVideo"></div>
+                <div id="dm_player"></div>
+                <div id="charge_dm_player"></div>
+            </div>
+        </div>
+        
+        <div class="boxDiv" id="page_informations">
+			<div id="scroller">
+                <p id="informations_bloc"></p>
+                <p align="center" id="version_bloc"></p>
+            </div>
+		</div>
+        
+        <!--<div class="boxDiv" id="page_tweets">
+			<div id="scroller">
+            	<div class="tweets">
+                	<h3><i><img src="images/tweets.png" alt="" /> </i> Derniers Tweets</h3>		              
+                	<div class="tweets_list tweets-container"></div>
+                </div>
+            </div>
+		</div>-->
+        
+		<div class="boxDiv page" id="page_contact">
+			<div id="scroller" class="form-style-5">
+				<div class="c_telecharger">
+					<table>
+						<tr>
+							<td><img src="images/icone-camera.png" id="icon-camera" border="0" /></td>
+							<!--<td>télécharger une photo</td>-->
+							<td><button class="c_input_photo ripple">Télécharger une photo</button></td>
+						</tr>
+					</table>
+				</div>
+				<div style="display: none;"><input type="hidden" id="telechargerphoto" value="" /></div>
+				<table width="100%" cellpadding="5" cellspacing="0" border="0">
+					<tr>
+						<td align="center"><div class="icone" data-icon="&#xe070;"></div></td>
+						<td><input type="text" id="c_nom" placeholder="Nom" class="c_input" /></td>
+					</tr>
+					<tr>
+						<td align="center"><div class="icone" data-icon="&#xe040;"></div></td>
+						<td><input type="email" id="c_mail" placeholder="E-mail" class="c_input" /></td>
+					</tr>
+					<tr>
+						<td align="center"><div class="icone" data-icon="&#xe054;"></div></td>
+						<td><input type="tel" id="c_mobile" placeholder="Portable" class="c_input" /></td>
+					</tr>
+					<tr>
+						<td align="center"><div class="icone" data-icon="&#xe071;"></div></td>
+						<td><select id="c_destinataire" class="c_input"><option>Envoyé à</option></select></td>
+					</tr>
+					<tr>
+						<td align="center" valign="top"><div class="icone" data-icon="&#xe06a;"></div></td>
+						<td><textarea id="c_message" placeholder="Message" class="c_input"></textarea></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td align="right"><button onclick="Contact.sendForm();" class="c_input_submit ripple">Envoyer</button></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+        
+        <div class="boxDiv page" id="page_dedicace">
+            <div id="scroller">
+                <div id="step1" class="selectHour">
+                	<div class="table-dedicace">
+                    	<div class="title">
+                        	<img src="images/player/music.png" class="imgDedicace" border="0" width="40" /><span class="titreDedicace">Dédicacez un titre !</span>
+                        </div>
+                        <div class="jours radio">
+                        	<a href="javascript:" onclick="Dedicace.selectDay('today');"><span>Aujourd'hui</span></a>
+                            <a href="javascript:" class="jour2" onclick="Dedicace.selectDay('tomorrow');"><span>Demain</span></a>
+                            <div id="fluxChoisiMysun" style="padding: 15px; color: #636363; font-size: 14px; font-weight: bold; font-style: italic;">SUN Nantes</div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <div id="step1bis">
+                	<div class="table-dedicace">
+                    	<div class="title">
+                        	<!--<div class="fs1" aria-hidden="true" onclick="Dedicace.backStep1();"></div>-->
+                        	<img src="images/arrow-left.png" alt="Retour" class="fs1" aria-hidden="true" onclick="Dedicace.backStep1();"/><img src="images/player/music.png" class="imgDedicace" border="0" width="40" /><span class="titreDedicace">Dédicacez un titre !</span>
+                        </div>
+                        <div class="horaires">
+                        	<div id="roueSelectMySUN" class="clockpicker">
+								
+							</div>
+							<div id="imagePochette"></div>
+                        </div>
+                        <div id="titreSelectDedi" class="clear" style="padding-bottom: 20px; position: relative; top: -55px; color: rgb(99, 99, 99); font-weight: bold; font-style: italic;"></div>
+                    </div>
+                    <div class="pochette" id="pochette_dedicace"></div>
+                </div>
+                <div id="step2"></div>
+                <div id="step3"></div>
+            </div>
+        </div>
+
+	</div>
+	<div class="clear"></div>
+</div>
+<!--</div>-->
+
+<nav id="menu">
+	<ul>
+    	<img src="images/logo_sun.png" class="logoMenu" alt="SUN" />
+		<li class="mm-selected"><a href="#" id="direct"><i><img src="images/live.png" alt="" /></i> Direct</a></li>
+        <li id="menudiffusion"><a href="#" id="diffusion"><span><i><img src="images/events-hover.png" alt="" /></i></span> Titres diffusés</a></li>
+		<li id="menuplaylist"><a href="#" id="playlist"><span><i><img src="images/myplaylist.png" alt="" /></i> My Playlist</span><span id="nbMenuPlaylist"></span><div class="clear"></div></a></li>
+		<li><a href="#" id="podcasts"><span> <i><img src="images/podcasts.png" alt="" /></i> Podcasts</span><span id="nbMenuPodcast"></span><div class="clear"></div></a></li>
+		<li><a href="#" id="videos"><span> <i><img src="images/videos.png" alt="" /></i> Vidéos</span><span id="nbMenuVideo"></span><div class="clear"></div></a></li>
+		<li><a href="javascript:" id="num_message"><i><img src="images/mess.png" alt="" /></i> Laisser un message</a></li>
+		<li><a href="javascript:" id="num_standard"><span><i><img src="images/tel.png" alt="" /></i> Joindre le standard</span></a></li>
+        <!--<li><a href="#" onclick="tuto.clearTuto();"><span><i><img src="images/events-hover.png" alt="" /></i></span> Relancer TUTO</a></li>-->
+		<li><a href="#" id="informations"><i><img src="images/infos.png" alt="" /></i> Informations</a></li>
+        <li class="bottom-menu-list"><a href="#" onclick="quitConfirm();" id="quitApp"><i><img src="images/quit.png" alt="" /></i> Quitter MySun</a></li>
+        <!--<li class="bottom-menu-list"><a href="#" id="informations"><i><img src="images/infos.png" alt="" /></i> Informations</a></li>-->
+        <div class="social_network_likes">
+        	<a href="#" id="contact" class="mail"><i><img src="images/mail-hover.png" alt=""></i> <span>Contact</span></a>
+            <a id="javascriptLienfacebook" href="javascript:window.open('fb://facebook.com/lesonunique','_system','location=yes,presentationstyle=pagesheet,hardwareback=yes');" class="facebook"><i><img src="images/facebook_icon.png" alt=""></i> <span id="nbLikesFacebook">Facebook</span></a>
+            <a id="javascriptLientwitter" href="javascript:window.open('http://twitter.com/lesonunique','_system','location=yes,presentationstyle=formsheet,hardwareback=yes');" class="twitter"><i><img src="images/tweets.png" alt=""></i> <span id="nbFollowTwitter">Twitter</span></a>
+        </div>
+	</ul>
+</nav>
+
+<script type="text/javascript" src="js/iscroll5.js"></script>
+<script type="text/javascript" src="js2/jquery/cardview.js"></script>
+<script type="text/javascript" src="js2/jquery/jquery.touchSwipe.min.js"></script>
+
+<script type="text/javascript" src="date-time-picker/js/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript" src="js/bootstrap-clockpicker.js"></script>
+
+<script type="text/javascript" src="js/connectLogin.js"></script>
+<script type="text/javascript" src="js/changePage.js"></script>
+
+<script type="text/javascript" src="js2/frap/Api.js"></script>
+<script type="text/javascript" src="js2/frap/Podcasts.js"></script>
+<script type="text/javascript" src="js2/frap/Videos.js"></script>
+<script type="text/javascript" src="js2/frap/Dedicace.js"></script>
+<script type="text/javascript" src="js2/frap/Direct.js"></script>
+<script type="text/javascript" src="js2/frap/Contact.js"></script>
+<script type="text/javascript" src="js2/frap/Flux.js"></script>
+<script type="text/javascript" src="js2/frap/Rater.js"></script>
+<script type="text/javascript" src="js/numbersRS.js"></script>
+<script type="text/javascript" src="js/tuto.js"></script>
+<script type="text/javascript" src="js2/frap/init.js"></script>
+
+<script type="text/javascript" src="js/Diffusion.js"></script>
+<script type="text/javascript" src="js/Playlist.js"></script>
+
+<script src="app-gear/js/foundation.min.js"></script>
+<script src="http://connect.soundcloud.com/sdk.js"></script>
+<script src="app-gear/js/jquery.gearplayer.libs.min.js"></script>
+<script src="app-gear/js/jquery.gearplayer.js"></script>
+<script src="app-gear/js/appGear.js"></script>
+
+<script type="text/javascript" src="js/gererFlux.js"></script>
+
+<script type="text/javascript" src="js/views_infinite_scroll.js"></script>
+<script type="text/javascript" src="js/fingerprint/fingerprint.js"></script>
+<script>
+    var fingerprint = new Fingerprint().get();
+	console.log(fingerprint);
+</script>
+
+<script src="profil/js/profil.js"></script>
+
+<!--<script Smart Banner Android></script>-->
+<script type="text/javascript" src="smartbanner/jquery.smartbanner.js"></script>
+<script type="text/javascript">
+if(isphonegap == false)
+{
+
+	var android0 = location.href.match(/#android$/) || navigator.userAgent.match(/Android/i) != null;
+	var ios0 = navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i) != null;
+	var windows0 = navigator.userAgent.match(/Windows Phone/i) != null;
+	
+	if(android0 || ios0 || windows0)
+	{
+		$.smartbanner({
+			title: 'MySUN',
+			author: 'lesonunique.com',
+			price: 'GRATUIT', // Price of the app
+			icon: 'images/google_sun.png',
+			button: 'INSTALLER', // Text on the install button
+			//  force: android ? 'android' : 'ios',
+			force: android0 ? 'android' : (ios0 ? 'ios' : 'windows'),
+			daysHidden: 0,
+			daysReminder: 0,
+		});
+		  
+		$('.theme-toggle').on('click', function(e) {
+			e.preventDefault();
+			$.smartbanner('switchType')
+			$(this).text($(this).text() == 'Preview Android' ? 'Preview iOS' : 'Preview Android')
+		})
+		  
+		if (android0) $('.theme-toggle').text('Preview iOS');
+	}
+	
+}
+
+		var larg = (window.innerWidth);
+		var haut = (window.innerHeight);
+		
+		$('#presFullScreen').css("width", larg);
+		$('#presFullScreen').css("height", haut);
+		
+		$('#tutoFullScreen').css("width", larg);
+		$('#tutoFullScreen').css("height", haut);
+
+</script>
+
+</body>
+</html>

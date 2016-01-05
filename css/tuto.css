@@ -1,0 +1,536 @@
+#page1{display:block;}
+#page2{display:none;}
+#page3{display:none;}
+
+/* #page1 */
+
+#presFullScreen
+{
+	z-index:7000;
+	background-color:#232e87;
+	position:fixed;
+	top:0;
+}
+
+#presFullScreen #tuto1
+{
+	text-align:center;
+	top:15%;
+	position:fixed;
+	left:0;
+	right:0;
+}
+
+#presFullScreen #tuto1 img
+{
+	width:50%;
+	max-width:567px;
+}
+
+#presFullScreen #tuto1-1
+{
+	text-align:center;
+	position:fixed;
+	bottom:100px;
+	left:0;
+	right:0;
+}
+
+#presFullScreen #tuto1-1 .titleTuto
+{
+	padding-bottom:25px;
+	font-weight:bold;
+	font-size:1.5em;
+}
+
+#presFullScreen #tuto1-1 .txtTuto
+{
+	padding-bottom:10px;
+	font-size:1em;
+}
+
+#presFullScreen #tuto1-2
+{
+	height:80px;
+	border-top:#FFFFFF solid thin;
+	width:100%;
+	position:fixed;
+	bottom:0;
+}
+
+#presFullScreen #tuto1-2 .part1
+{
+	display:inline-block;
+	width:20%;
+	float:left;
+	height:40px;
+	padding-top:30px;
+	padding-left:30px;
+	font-weight:bold;
+	cursor:pointer;
+}
+
+#presFullScreen #tuto1-2 .part2
+{
+	display:inline-block;
+	width:60%;
+	float:left;
+	text-align:center;
+	height:40px;
+	padding-top:32px;
+}
+
+#presFullScreen #tuto1-2 .part2 .point1
+{
+	opacity:1;
+	cursor:pointer;
+}
+
+#presFullScreen #tuto1-2 .part2 .point2
+{
+	opacity:0.3;
+	padding-left:7px;
+	padding-right:3.5px;
+	cursor:pointer;
+}
+
+
+#presFullScreen #tuto1-2 .part2 .point3
+{
+	opacity:0.3;
+	padding-left:3.5px;
+	padding-right:7px;
+	cursor:pointer;
+}
+
+#presFullScreen #tuto1-2 .part2 .point4
+{
+	opacity:0.3;
+	cursor:pointer;
+}
+
+
+#presFullScreen #tuto1-2 .part3
+{
+	display:inline-block;
+	width:20%;
+	float:right;
+	height:40px;
+	padding-top:20px;
+	padding-right:30px;
+}
+
+#presFullScreen #tuto1-2 .part3 img
+{
+	float:right;
+	cursor:pointer;
+}
+
+
+/* #page2 */
+
+#presFullScreen #tuto2
+{
+	text-align:center;
+	top:3%;
+	position:fixed;
+	left:0;
+	right:0;
+}
+
+#presFullScreen #tuto2 img
+{
+	width:80%;
+	max-width:567px;
+}
+
+#presFullScreen #tuto2-1
+{
+	text-align:center;
+	position:fixed;
+	bottom:100px;
+	left:0;
+	right:0;
+}
+
+#presFullScreen #tuto2-1 .titleTuto
+{
+	padding-bottom:25px;
+	font-weight:bold;
+	font-size:1.5em;
+}
+
+#presFullScreen #tuto2-1 .txtTuto
+{
+	padding-bottom:10px;
+	font-size:1em;
+}
+
+#presFullScreen #tuto2-2
+{
+	height:80px;
+	border-top:#FFFFFF solid thin;
+	width:100%;
+	position:fixed;
+	bottom:0;
+}
+
+#presFullScreen #tuto2-2 .part1
+{
+	display:inline-block;
+	width:20%;
+	float:left;
+	height:40px;
+	padding-top:30px;
+	padding-left:30px;
+	font-weight:bold;
+	cursor:pointer;
+}
+
+#presFullScreen #tuto2-2 .part2
+{
+	display:inline-block;
+	width:60%;
+	float:left;
+	text-align:center;
+	height:40px;
+	padding-top:32px;
+}
+
+#presFullScreen #tuto2-2 .part2 .point1
+{
+	opacity:0.3;
+	cursor:pointer;
+}
+
+#presFullScreen #tuto2-2 .part2 .point2
+{
+	opacity:1;
+	padding-left:7px;
+	padding-right:3.5px;
+	cursor:pointer;
+}
+
+
+#presFullScreen #tuto2-2 .part2 .point3
+{
+	opacity:0.3;
+	padding-left:3.5px;
+	padding-right:7px;
+	cursor:pointer;
+}
+
+#presFullScreen #tuto2-2 .part2 .point4
+{
+	opacity:0.3;
+	cursor:pointer;
+}
+
+
+#presFullScreen #tuto2-2 .part3
+{
+	display:inline-block;
+	width:20%;
+	float:right;
+	height:40px;
+	padding-top:20px;
+	padding-right:30px;
+}
+
+#presFullScreen #tuto2-2 .part3 img
+{
+	float:right;
+	cursor:pointer;
+}
+
+
+/* #page3 */
+
+#presFullScreen #tuto3
+{
+	text-align:center;
+	top:3%;
+	position:fixed;
+	left:0;
+	right:0;
+}
+
+#presFullScreen #tuto3 img
+{
+	width:75%;
+	max-width:567px;
+}
+
+#presFullScreen #tuto3-1
+{
+	text-align:center;
+	position:fixed;
+	bottom:100px;
+	left:0;
+	right:0;
+}
+
+#presFullScreen #tuto3-1 .titleTuto
+{
+	padding-bottom:25px;
+	font-weight:bold;
+	font-size:1.5em;
+}
+
+#presFullScreen #tuto3-1 .txtTuto
+{
+	padding-bottom:10px;
+	font-size:1em;
+}
+
+#presFullScreen #tuto3-2
+{
+	height:80px;
+	border-top:#FFFFFF solid thin;
+	width:100%;
+	position:fixed;
+	bottom:0;
+}
+
+#presFullScreen #tuto3-2 .part1
+{
+	display:inline-block;
+	width:20%;
+	float:left;
+	height:40px;
+	padding-top:30px;
+	padding-left:30px;
+	font-weight:bold;
+	cursor:pointer;
+}
+
+#presFullScreen #tuto3-2 .part2
+{
+	display:inline-block;
+	width:60%;
+	float:left;
+	text-align:center;
+	height:40px;
+	padding-top:32px;
+}
+
+#presFullScreen #tuto3-2 .part2 .point1
+{
+	opacity:0.3;
+	cursor:pointer;
+}
+
+#presFullScreen #tuto3-2 .part2 .point2
+{
+	opacity:0.3;
+	padding-left:7px;
+	padding-right:3.5px;
+	cursor:pointer;
+}
+
+
+#presFullScreen #tuto3-2 .part2 .point3
+{
+	opacity:1;
+	padding-left:3.5px;
+	padding-right:7px;
+	cursor:pointer;
+}
+
+#presFullScreen #tuto3-2 .part2 .point4
+{
+	opacity:0.3;
+	cursor:pointer;
+}
+
+
+#presFullScreen #tuto3-2 .part3
+{
+	display:inline-block;
+	width:20%;
+	float:right;
+	height:40px;
+	padding-top:20px;
+	padding-right:30px;
+}
+
+#presFullScreen #tuto3-2 .part3 img
+{
+	float:right;
+	cursor:pointer;
+}
+
+/* #page4 */
+
+#presFullScreen #tuto4
+{
+	text-align:center;
+	top:3%;
+	position:fixed;
+	left:0;
+	right:0;
+}
+
+#presFullScreen #tuto4 img
+{
+	width:75%;
+	max-width:567px;
+}
+
+#presFullScreen #tuto4-1
+{
+	text-align:center;
+	position:fixed;
+	bottom:100px;
+	left:0;
+	right:0;
+}
+
+#presFullScreen #tuto4-1 .titleTuto
+{
+	padding-bottom:25px;
+	font-weight:bold;
+	font-size:1.5em;
+}
+
+#presFullScreen #tuto4-1 .txtTuto
+{
+	padding-bottom:10px;
+	font-size:1em;
+}
+
+#presFullScreen #tuto4-2
+{
+	height:80px;
+	border-top:#FFFFFF solid thin;
+	width:100%;
+	position:fixed;
+	bottom:0;
+}
+
+#presFullScreen #tuto4-2 .part1
+{
+	display:inline-block;
+	width:20%;
+	float:left;
+	height:40px;
+	padding-top:30px;
+	padding-left:30px;
+	font-weight:bold;
+	cursor:pointer;
+}
+
+#presFullScreen #tuto4-2 .part2
+{
+	display:inline-block;
+	width:60%;
+	float:left;
+	text-align:center;
+	height:40px;
+	padding-top:32px;
+}
+
+#presFullScreen #tuto4-2 .part2 .point1
+{
+	opacity:0.3;
+	cursor:pointer;
+}
+
+#presFullScreen #tuto4-2 .part2 .point2
+{
+	opacity:0.3;
+	padding-left:7px;
+	padding-right:3.5px;
+	cursor:pointer;
+}
+
+#presFullScreen #tuto4-2 .part2 .point3
+{
+	opacity:0.3;
+	padding-left:3.5px;
+	padding-right:7px;
+	cursor:pointer;
+}
+
+#presFullScreen #tuto4-2 .part2 .point4
+{
+	opacity:1;
+	cursor:pointer;
+}
+
+
+
+#presFullScreen #tuto4-2 .part3
+{
+	display:inline-block;
+	width:20%;
+	float:right;
+	height:40px;
+	padding-top:20px;
+	padding-right:30px;
+}
+
+#presFullScreen #tuto4-2 .part3 img
+{
+	float:right;
+	cursor:pointer;
+}
+
+
+/* TUTO */
+
+#tutoFullScreen
+{
+	z-index:7000;
+	background-color:white;
+	position:fixed;
+	top:0;
+	width:100%;
+	height:100%;
+	opacity:0.7;
+}
+
+#texteTuto1, #texteTuto2, #texteTuto3
+{
+	color:black;
+	position:fixed;
+	bottom:50px;
+	left:5%;
+	right:5%;
+	text-align:center;
+	font-size: 1em;
+	z-index:9000;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	background-color:white;
+	padding:20px;
+	box-shadow: 1px 1px 12px #555;
+}
+
+#texteTuto1 span.bold, #texteTuto2 span.bold, #texteTuto3 span.bold
+{
+    font-weight: bold;
+}
+
+#texteTuto1 span.separationOu, #texteTuto2 span.separationOu, #texteTuto3 span.separationOu
+{
+	font-style:italic;
+	font-size:0.8em;
+}
+
+#texteTuto1 span.lien, #texteTuto2 span.lien, #texteTuto3 span.lien
+{
+   	color:#56B0E8;
+	cursor:pointer;
+}
+
+#texteTuto1 span.vert, #texteTuto2 span.vert, #texteTuto3 span.vert
+{
+   	color:green;
+}
+
+#texteTuto1 span.rouge, #texteTuto2 span.rouge, #texteTuto3 span.rouge
+{
+   	color:red;
+}

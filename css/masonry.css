@@ -1,0 +1,122 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* ---- grid ---- */
+
+.grid {
+  max-width: 100%;
+  padding-left:2%;
+}
+
+/* clearfix */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* ---- grid-item ---- */
+
+.grid-item {
+  width: 30%;
+  height: auto;
+  margin:1%;
+  float: left;
+  margin-bottom: 2%;
+  /*background: white;*/
+  border: none;
+  border-radius: 6px;
+}
+
+.grid-item--width2 { 
+	width: 94%; 
+	height: auto; 
+	background:white; 
+	color:black;
+}
+
+.grid-item--width2 img { 
+	float:left;
+	width:30%;
+	border-radius: 6px 0 0 0;
+}
+
+.grid-item--width2 .infosDedi {
+	float:left;
+	text-align:left;
+	font-size:1em;
+}
+
+.grid-item--width2 .artist { 
+	
+}
+
+.grid-item--width2 .diffusion { 
+	
+}
+
+.grid-item--width2 .album { 
+	
+}
+
+.grid-item--width2 .barreBoutons {
+	clear:both;
+	background-color:#1C1C1C;
+	border-radius: 0 0 6px 6px;
+	height: 2em;
+}
+
+.grid-item--width2 .post-meta {
+    overflow: hidden;
+    position: relative;
+    top: 1px;
+}
+
+
+
+
+/* mise en page */
+
+.photo-wrap img.photo {
+    border-radius: 6px;
+    display: block;
+    margin-bottom: 5px;
+    width: 100%;
+	height:100%;
+}
+
+.photo-wrap span {
+	position: absolute;
+}
+
+.song-meta
+{
+	text-align:left;
+	color:black;
+	font-size:0.7em;
+	padding:0.2em 0.7em;
+}
+
+.artist {
+    font-weight: 700;
+}
+
+.album {
+    font-weight: 700;
+	padding-top:1em;
+	
+}
+
+.plays {
+    font-weight: 400;
+    margin-top: 7px;
+	color: #8b99a0;
+	padding-top:1em;
+}
+
+.caption {
+    padding-top:1em;
+	color: #f64c3f;
+}

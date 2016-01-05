@@ -1,0 +1,140 @@
+#step1 .radio
+.checkbox
+{
+  position :absolute;
+  width :50%;
+  height :100%;
+}
+
+#step1 .checkbox
+{
+  left: 50%;
+  border-left :1px solid #b5b5b5;
+}
+
+#step1 .radio
+{
+	color:#D7D7D7;
+	font-size: 0.8em;
+}
+
+#step1 .radio
+  .switch
+  {	
+	background: #F49500 none repeat scroll 0 0;
+    border-radius: 25px;
+    height: 50px;
+    margin: 10px;
+    position: relative;
+    transition: all 0.2s ease 0s;
+    width: auto;
+	margin-top: 30px;
+}
+/*#step1 .radio .switch span
+{      
+position :absolute;
+      width :20px;
+      height :4px;
+      top :50%;
+      left: 50%;
+      margin:-2px 0px 0px -4px;
+      background: white;
+      display :block;
+      transform :rotate(-45deg);
+      transition :all 0.2s ease;
+}
+#step1 .radio .switch span:after
+{
+        content: "";
+        display :block;
+        position: absolute;
+        width: 4px;
+        height :12px;
+        margin-top :-8px;
+        background :white;
+        transition :all 0.2s ease;
+}
+*/
+#step1 .radio .switch span
+{  
+	display: inline-block;
+    height: 20px;
+    left: 50%;
+    top: 50%;
+    width: 40px;
+    padding-top: 15px;
+}
+#step1 .radio input[type=radio]
+  {
+    display :none;
+  }
+
+#step1 .switch label
+  {
+    cursor :pointer;
+    color :rgba(#000, .2);
+    width :50%;
+    line-height :50px;
+    transition :all 0.2s ease;
+  }
+
+#step1 label[for=yes]
+  {
+    position :absolute;
+    left: 0px;
+    height :20px;
+  }
+
+#step1 label[for=no]
+  {
+    position :absolute;
+    right :0px;
+  }
+
+#step1 #no:checked ~ .switch
+  {
+    background :#56B0E8;
+  }
+
+/*#step1 #no:checked ~ .switch span
+  {
+    background :white;
+    margin-left :-8px;
+  }
+#step1 #no:checked ~ .switch span:after
+   {
+      background: white;
+      height :20px;
+      margin-top :-8px;
+      margin-left :8px;
+  }*/
+
+#step1 #yes:checked ~ .switch label[for=yes]
+  {
+    color: white;
+	font-weight: bold;
+	}
+
+#step1 #no:checked ~ .switch label[for=no]
+  {
+    color :white;
+	font-weight: bold;
+  }
+
+/*#step1 .radio span
+{
+      display :inline-block;
+      width: 50%;
+      float :left;
+      color :rgba(#FFF, .9);
+      text-shadow :0px -1px 0px rgba(#000, .1);
+}
+#step1 .radio span:first-child
+	{
+      color :rgba(#000, .2);
+      cursor: pointer;
+	}
+#step1 .radio span:last-child
+	{
+      cursor :default;
+	}*/
