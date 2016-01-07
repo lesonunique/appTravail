@@ -44,7 +44,7 @@
 	<gap:plugin name="cordova-plugin-x-toast" source="npm" />
 	<gap:plugin name="cordova-plugin-uniquedeviceid" source="npm" />
 	<gap:plugin name="cordova-plugin-x-socialsharing" source="npm" />
-	<gap:plugin name="pushbots-cordova-plugin" source="npm" />
+	<!--<gap:plugin name="pushbots-cordova-plugin" source="npm" />-->
 	
 	<gap:icon src="images/logos/winphone/62x62.png" gap:platform="winphone" />
 	<gap:icon src="images/logos/winphone/173x173.png" gap:platform="winphone" gap:role="background" />
