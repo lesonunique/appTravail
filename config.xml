@@ -71,7 +71,6 @@
 	<plugin name="https://github.com/xmartlabs/cordova-plugin-market" />
 	<plugin name="cordova-plugin-apprate" />
 	<plugin name="cordova-plugin-crosswalk-webview" />
-	<plugin name="cordova-plugin-facebook4" />
 	<plugin name="cordova-plugin-globalization" />
 	<plugin name="cordova-plugin-music-controls" />
 	<plugin name="de.appplant.cordova.plugin.local-notification" />
