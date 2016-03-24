@@ -48,6 +48,11 @@ Diffusion =
 					Diffusion._urlTitres = 'http://www.lesonunique.com/content/titres-diffuses/jsontitres';
 					document.getElementById("choixfluxtitres").innerHTML="SUN Nantes";
 					break;
+				case 'events':
+					//w3 --> fm_nantes
+					Diffusion._urlTitres = 'http://www.lesonunique.com/content/titres-diffuses/jsontitres';
+					document.getElementById("choixfluxtitres").innerHTML="SUN Nantes";
+					break;
 				case '10080':
 					//w4
 					Diffusion._urlTitres = 'http://www.lesonunique.com/content/titres-diffuses/jsontitres2/w4';

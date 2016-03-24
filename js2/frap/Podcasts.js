@@ -162,6 +162,8 @@ Podcasts = {
 				closing_speed:500,
 				easing:'swing'
 			});
+			
+			$("span.usquare_about").mCustomScrollbar();
 
         } else {
             $('#page_podcasts').find('#scroller').html('<div align="center" style="color:black;padding: 20px 10px;">Aucun Podcast disponible<br />pour cette date.</div>');
@@ -220,6 +222,8 @@ Podcasts = {
 				closing_speed:500,
 				easing:'swing'
 			});
+			
+			$("span.usquare_about").mCustomScrollbar();
 
         } else {
             $('#page_podcasts').find('#scroller2').html('<div align="center" style="color:black;padding: 20px 10px;">Vous n\'avez pas téléchargé<br />de podcast.</div>');

@@ -1,3 +1,23 @@
+/**
+ * The jdrupal-ng Angular module.
+ */
+angular.module('jdrupal-ng', []).
+  service('jdrupal', ['$http', 'jdrupalSettings', jdrupal]).
+  value('jdrupalSettings', null);
+
+/**
+ * The "jdrupal" Angular Service.
+ */
+function jdrupal($http, jdrupalSettings) {
+  this.restPath = jdrupalSettings.site_path + '/?q=' + jdrupalSettings.endpoint;
+  this.node_load = function(nid) {
+    return $http.get(this.restPath + '/node/' + nid + '.json');
+  }
+  this.user_load = function(uid) {
+    return $http.get(this.restPath + '/user/' + uid + '.json');
+  }
+}
+
 // Initialize the Drupal JSON object and run the bootstrap, if necessary.
 var Drupal = {}; drupal_init();
 
@@ -119,6 +139,7 @@ function date(format) {
             case 0: result += 'Sun'; break;
             case 1: result += 'Mon'; break;
             case 2: result += 'Tue'; break;
+
             case 3: result += 'Wed'; break;
             case 4: result += 'Thu'; break;
             case 5: result += 'Fri'; break;
@@ -193,6 +214,24 @@ function date(format) {
           break;
 
         /* TIME */
+
+        // Lowercase Ante meridiem and Post meridiem: am or pm
+        case 'a':
+        // Uppercase Ante meridiem and Post meridiem: AM or PM
+        case 'A':
+          var hours = d.getHours();
+          if (hours < 12) { result += 'am'; }
+          else { result += 'pm'; }
+          if (character == 'A') { result = result.toUpperCase(); }
+          break;
+
+        // 12-hour format of an hour without leading zeros: 1 through 12
+        case 'g':
+          var hours = d.getHours();
+          if (hours == 0 || hours == 23) { hours = 12; }
+          else { hours = hours % 12; }
+          result += '' + hours;
+          break;
 
         // 24-hour format of an hour without leading zeros: 0 through 23
         case 'G':
@@ -1359,10 +1398,9 @@ Drupal.services.call = function(options) {
             }
 
             // Add the token to the header if we have one.
-			if (token) 
-			{
-			  request.setRequestHeader('X-CSRF-Token', token);
-			}
+            if (token) {
+              request.setRequestHeader('X-CSRF-Token', token);
+            }
 
             // Send the request with or without data.
             if (typeof options.data !== 'undefined') {
@@ -1425,17 +1463,12 @@ function services_get_csrf_token(options) {
     var token;
 
     // Are we resetting the token?
-    if (options.reset) 
-	{ 
-		Drupal.sessid = null; 
-	}
+    if (options.reset) { Drupal.sessid = null; }
 
     // Do we already have a token? If we do, return it the success callback.
-   	if (Drupal.sessid) 
-	{ 
-		token = Drupal.sessid; 
-	}
+    if (Drupal.sessid) { token = Drupal.sessid; }
 	
+	// PATCH PERSO
 	console.log('test0');
 	if (( localStorage.getItem("storageUID") === null ) || ( localStorage.getItem("storageUID") == 0 ))
 	{
@@ -1453,18 +1486,12 @@ function services_get_csrf_token(options) {
 		console.log(token2);
 		token = token2;
 	}
+	// FIN PATCH PERSO
 	
-	
-	
-    /*if (token) 
-	{
-    	if (options.success) 
-		{ 
-			options.success(token);
-		}
-      	return;
-    }*/
-
+	if (token) {
+      if (options.success) { options.success(token); }
+      return;
+    }
     // We don't have a token, let's get it from Drupal...
 
     // Build the Request and URL.
@@ -2542,4 +2569,3 @@ function user_request_new_password(name, options) {
   }
   catch (error) { console.log('user_request_new_password - ' + error); }
 }
-

@@ -91,6 +91,7 @@ tuto = {
 		//document.getElementById("btn_dedicace_noel").style.zIndex="8000";
 		document.getElementById("btn_dedicace_franco").style.zIndex="8000";
 		document.getElementById("btn_dedicace_sports").style.zIndex="8000";
+		document.getElementById("btn_dedicace_events").style.zIndex="8000";
 		document.getElementById("btn_dedicace_10080").style.zIndex="8000";
 		document.getElementById("btn_dedicace_sun2").style.zIndex="8000";
 		
@@ -104,6 +105,7 @@ tuto = {
 		//document.getElementById("btn_dedicace_noel").style.zIndex="";
 		document.getElementById("btn_dedicace_franco").style.zIndex="";
 		document.getElementById("btn_dedicace_sports").style.zIndex="";
+		document.getElementById("btn_dedicace_events").style.zIndex="";
 		document.getElementById("btn_dedicace_10080").style.zIndex="";
 		document.getElementById("btn_dedicace_sun2").style.zIndex="";
 	},

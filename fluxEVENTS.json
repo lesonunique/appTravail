@@ -1,0 +1,36 @@
+{
+	"events": [
+		
+		{
+			"title":"La Guilde du Mercredi",
+			"subtitle":"Live",
+			"nids":"58155",
+			"image":"http://www.lesonunique.com/sites/default/files/styles/pochette/public/laguildedumatin.jpg",
+			"debut":"2016-02-03 20:00",
+			"fin":"2016-02-03 22:30"
+		},
+		
+		{
+			"title":"La Guilde du Mercredi",
+			"subtitle":"Retrouvez-nous à 20h00",
+			"nids":"58155",
+			"image":"http://www.lesonunique.com/sites/default/files/styles/pochette/public/laguildedumatin.jpg",
+			"debut":"2016-02-03 07:00",
+			"fin":"2016-02-03 20:00"
+		}
+		
+	],
+	
+	"def": [
+		
+		{
+			"title":"Flux déconnecté",
+			"subtitle":"Pas d'évènement en cours",
+			"nids":"",
+			"image":"images/vinyl-disc-record-placemats.jpg",
+			"debut":"---",
+			"fin":"---"
+		}
+		
+	]
+}

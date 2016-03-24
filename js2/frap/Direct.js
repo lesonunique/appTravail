@@ -93,6 +93,13 @@ Direct = {
 					Direct._nameFluxLive = ' - SPORTS';
 					Direct.refreshData1();
 					break;
+				case 'events':
+					//w3 --> fm_nantes
+					document.getElementById("fluxChoisiMysun").innerHTML="MySun sur SUN Nantes";
+					Direct._fluxSelect = 6;
+					Direct._nameFluxLive = ' - EVENT';
+					Direct.refreshDataEVENT();
+					break;
 				case '10080':
 					//w4
 					document.getElementById("fluxChoisiMysun").innerHTML="MySun sur 100%80";
@@ -141,6 +148,13 @@ Direct = {
 				Direct.refreshData1();
 			}
 			else if((g.get('current'))==4)
+			{
+				document.getElementById("fluxChoisiMysun").innerHTML="MySun sur SUN Nantes";
+				Direct._fluxSelect = 6;
+				Direct._nameFluxLive = ' - EVENT';
+				Direct.refreshDataEVENT();
+			}
+			else if((g.get('current'))==5)
 			{
 				document.getElementById("fluxChoisiMysun").innerHTML="MySun sur SUN Nantes";
 				Direct._fluxSelect = 4;
@@ -242,6 +256,71 @@ Direct = {
 			Direct.showTitle2();
 		}
 	},
+	
+	refreshDataEVENT : function(flux) {
+		var countNbEvent = 0;
+		$.ajax
+		({
+			url: 'http://www.lesonunique.com/appli/fluxEVENTS.json', 		
+			method: 'GET',
+			dataType: 'json',
+			success: function(data) 
+			{
+				Direct._meta = data;
+				console.log(Direct._meta);
+				for (i = 0; i < Direct._meta.events.length; i++)
+				{
+					if((Direct._meta.events[i].debut != "") && (Direct._meta.events[i].fin != ""))
+					{
+						if(((moment(moment().format())) > (moment(Direct._meta.events[i].debut,"YYYY-MM-DD HH:mm"))) && ((moment(moment().format())) < (moment(Direct._meta.events[i].fin,"YYYY-MM-DD HH:mm")))) 
+						{
+							if(Direct._current_direct != Direct._meta.events[i].title) {
+								Direct._current_direct = Direct._meta.events[i].title;
+								Direct._current_nid = Direct._meta.events[i].nids;
+								Direct._entityID = Direct._meta.events[i].nids;;
+								testVote(Direct._fluxSelect);
+								testFlag(Direct._fluxSelect);
+								var nodeLienTemp = '/node/'+Direct._current_nid;
+								Direct.showTitleALL(Direct._meta.events[i].title,Direct._meta.events[i].subtitle,Direct._meta.events[i].image,Direct._meta.events[i].nids,nodeLienTemp);
+							}
+							
+							countNbEvent = 1;
+						}
+					}
+				}
+				if(countNbEvent == 0)
+				{
+					if(Direct._current_direct != Direct._meta.def[0].title) {
+						Direct._current_direct = Direct._meta.def[0].title;
+						Direct._current_nid = Direct._meta.def[0].nids;
+						Direct._entityID = Direct._meta.def[0].nids;;
+						testVote(Direct._fluxSelect);
+						testFlag(Direct._fluxSelect);
+						var nodeLienTemp = '/node/'+Direct._current_nid;
+						Direct.showTitleALL(Direct._meta.def[0].title,Direct._meta.def[0].subtitle,Direct._meta.def[0].image,Direct._meta.def[0].nids,nodeLienTemp);
+					}
+				}
+				
+			},
+			error: function() 
+			{
+				console.log('********************************************* Direct.callback_error=');
+				
+				if(Direct._current_direct != 'Flux déconnecté') {
+					Direct._current_direct = 'Flux déconnecté';
+					Direct._current_nid = '';
+					Direct._entityID = '';
+					testVote(Direct._fluxSelect);
+					testFlag(Direct._fluxSelect);
+					var nodeLienTemp = '/node/'+Direct._current_nid;
+					Direct.showTitleALL('Flux déconnecté','Pas d\'évènement en cours','images/vinyl-disc-record-placemats.jpg','',nodeLienTemp);
+				}
+			}
+		});
+		
+		Direct._artistSelect = '';
+		Direct._titreSelect = '';
+	},
 
 	callback_direct : function(msg) {
         try {
@@ -342,7 +421,7 @@ Direct = {
 			document.getElementById("gAlbumGroup").innerHTML = '<span id="_gAlbumTitle" class="title" style="display: block; width: auto;"><a href="#">'+titleOK+'</a></span>';
 			document.getElementById("gAlbumCover").innerHTML = '<img src="'+Direct._meta.current.cover_url+'">';
 			
-			/*if(isphonegap == true)
+			if(isphonegap == true)
 			{
 				if(Direct._play == true)
 				{
@@ -353,7 +432,7 @@ Direct = {
 						isPlaying:true,
 						hasPrev:true,
     					hasNext:true,
-   						hasClose:false,
+   						hasClose:true,
 						ticker:'Now playing on SUN'
 					},Direct.onSucessMusic,Direct.onErrorMusic);
 				}
@@ -366,18 +445,18 @@ Direct = {
 						isPlaying:false,
 						hasPrev:true,
     					hasNext:true,
-   						hasClose:false,
+   						hasClose:true,
 						ticker:'Now playing on SUN'
 					},Direct.onSucessMusic,Direct.onErrorMusic);
 				}
-			}*/
+			}
 		}
 		else
 		{
 			document.getElementById("gAlbumGroup").innerHTML = '<span id="_gAlbumTitle" class="title" style="display: block; width: auto;"><a href="#">'+titleOK+'</a></span><span id="_gAlbumAuthor" class="author" style="display: block; width: auto;"><a href="#">'+artistOK+'</a></span>';
 			document.getElementById("gAlbumCover").innerHTML = '<img src="'+Direct._meta.current.cover_url+'">';
 			
-			/*if(isphonegap == true)
+			if(isphonegap == true)
 			{
 				if(Direct._play == true)
 				{
@@ -388,7 +467,7 @@ Direct = {
 						isPlaying:true,
 						hasPrev:true,
     					hasNext:true,
-   						hasClose:false,
+   						hasClose:true,
 						ticker:'Now playing on SUN'
 					},Direct.onSucessMusic,Direct.onErrorMusic);
 				}
@@ -401,11 +480,11 @@ Direct = {
 						isPlaying:false,
 						hasPrev:true,
     					hasNext:true,
-   						hasClose:false,
+   						hasClose:true,
 						ticker:'Now playing on SUN'
 					},Direct.onSucessMusic,Direct.onErrorMusic);
 				}
-			}*/
+			}
 		}
 		
         //return title;
@@ -475,7 +554,7 @@ Direct = {
 			document.getElementById("gAlbumGroup").innerHTML = '<span id="_gAlbumTitle" class="title" style="display: block; width: auto;"><a href="#">'+titleOK+'</a></span>';
 			document.getElementById("gAlbumCover").innerHTML = '<img src="'+image+'">';
 			
-			/*if(isphonegap == true)
+			if(isphonegap == true)
 			{
 				if(Direct._play == true)
 				{
@@ -486,7 +565,7 @@ Direct = {
 						isPlaying:true,
 						hasPrev:true,
     					hasNext:true,
-   						hasClose:false,
+   						hasClose:true,
 						ticker:'Now playing on SUN'
 					},Direct.onSucessMusic,Direct.onErrorMusic);
 				}
@@ -499,18 +578,18 @@ Direct = {
 						isPlaying:false,
 						hasPrev:true,
     					hasNext:true,
-   						hasClose:false,
+   						hasClose:true,
 						ticker:'Now playing on SUN'
 					},Direct.onSucessMusic,Direct.onErrorMusic);
 				}
-			}*/
+			}
 		}
 		else
 		{
 			document.getElementById("gAlbumGroup").innerHTML = '<span id="_gAlbumTitle" class="title" style="display: block; width: auto;"><a href="#">'+titleOK+'</a></span><span id="_gAlbumAuthor" class="author" style="display: block; width: auto;"><a href="#">'+artistOK+'</a></span>';
 			document.getElementById("gAlbumCover").innerHTML = '<img src="'+image+'">';
 			
-			/*if(isphonegap == true)
+			if(isphonegap == true)
 			{
 				if(Direct._play == true)
 				{
@@ -521,7 +600,7 @@ Direct = {
 						isPlaying:true,
 						hasPrev:true,
     					hasNext:true,
-   						hasClose:false,
+   						hasClose:true,
 						ticker:'Now playing on SUN'
 					},Direct.onSucessMusic,Direct.onErrorMusic);
 				}
@@ -534,11 +613,11 @@ Direct = {
 						isPlaying:false,
 						hasPrev:true,
     					hasNext:true,
-   						hasClose:false,
+   						hasClose:true,
 						ticker:'Now playing on SUN'
 					},Direct.onSucessMusic,Direct.onErrorMusic);
 				}
-			}*/
+			}
 		}
 		
         //return title;
@@ -620,7 +699,7 @@ Direct = {
 			
 			console.log('part one');
 			
-			/*if(isphonegap == true)
+			if(isphonegap == true)
 			{
 				if(Direct._play == true)
 				{
@@ -631,7 +710,7 @@ Direct = {
 						isPlaying:true,
 						hasPrev:true,
     					hasNext:true,
-   						hasClose:false,
+   						hasClose:true,
 						ticker:'Now playing on SUN'
 					},Direct.onSucessMusic,Direct.onErrorMusic);
 				}
@@ -644,11 +723,11 @@ Direct = {
 						isPlaying:false,
 						hasPrev:true,
     					hasNext:true,
-   						hasClose:false,
+   						hasClose:true,
 						ticker:'Now playing on SUN'
 					},Direct.onSucessMusic,Direct.onErrorMusic);
 				}
-			}*/
+			}
 		}
 		else
 		{
@@ -656,7 +735,7 @@ Direct = {
 			
 			document.getElementById("gAlbumCover").innerHTML = '<img src="images/vinyl-disc-record-placemats.jpg">';
 			
-			/*if(isphonegap == true)
+			if(isphonegap == true)
 			{
 				if(Direct._play == true)
 				{
@@ -667,7 +746,7 @@ Direct = {
 						isPlaying:true,
 						hasPrev:true,
     					hasNext:true,
-   						hasClose:false,
+   						hasClose:true,
 						ticker:'Now playing on SUN'
 					},Direct.onSucessMusic,Direct.onErrorMusic);
 				}
@@ -680,11 +759,11 @@ Direct = {
 						isPlaying:false,
 						hasPrev:true,
     					hasNext:true,
-   						hasClose:false,
+   						hasClose:true,
 						ticker:'Now playing on SUN'
 					},Direct.onSucessMusic,Direct.onErrorMusic);
 				}
-			}*/
+			}
 		}
 	},
 

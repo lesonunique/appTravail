@@ -8,8 +8,8 @@ Api = {
         //$('#num_message').attr('href','tel:'+Flux._frap_flux.telephone_msg);
 		if(isphonegap == true)
 		{
-			$('#num_message').attr('href',"javascript:window.open('tel:"+Flux._frap_flux.telephone_msg+"','_blank','location=yes,hardwareback=yes');");
-			$('#num_standard').attr('href',"javascript:window.open('tel:"+Flux._frap_flux.telephone_std+"','_blank','location=yes,hardwareback=yes');");
+			$('#num_message').attr('href',"javascript:window.open('tel:"+Flux._frap_flux.telephone_msg+"','_system','location=yes,hardwareback=yes');");
+			$('#num_standard').attr('href',"javascript:window.open('tel:"+Flux._frap_flux.telephone_std+"','_system','location=yes,hardwareback=yes');");
 		}
 		else
 		{

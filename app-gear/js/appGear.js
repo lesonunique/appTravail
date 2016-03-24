@@ -588,7 +588,7 @@ function newSonTemp(i,type)
 			
 }
 
-function chargeMYflux(fluxnoel,fluxsports,flux10080,fluxfranco)
+function chargeMYflux(fluxnoel,fluxsports,fluxevents,flux10080,fluxfranco)
 {
 	Direct._imgPodcast = "http://www.lesonunique.com/appli/images/vinyl-disc-record-placemats.jpg";
 
@@ -601,6 +601,7 @@ function chargeMYflux(fluxnoel,fluxsports,flux10080,fluxfranco)
 			{
 				var activeNoel = 0;
 				var activeSports = 0;
+				var activeEvents = 0;
 				var active10080 = 0;
 				var activefranco = 0;
 				
@@ -649,6 +650,12 @@ function chargeMYflux(fluxnoel,fluxsports,flux10080,fluxfranco)
 					activeSports = 1;
 					jsonFluxPosition.positionflux.push({"flux":"sports"});
 				}
+				if(fluxevents == 1)
+				{
+					jsonBase.entries.push({"title":"SUN Event", "author":"WebRadio", "media":"http://80.82.229.202/sunext2.mp3", "link":"", "color":"#911818" });
+					activeEvents = 1;
+					jsonFluxPosition.positionflux.push({"flux":"events"});
+				}
 				if(flux10080 == 1)
 				{
 					jsonBase.entries.push({"title":"100%80", "author":"WebRadio", "media":"http://80.82.229.202/sun100-80.mp3", "link":"", "color":"#E1007A" });
@@ -659,7 +666,7 @@ function chargeMYflux(fluxnoel,fluxsports,flux10080,fluxfranco)
 				jsonBase.entries.push({"title":"Dernier Podcast", "author":"SUN", "media":"jingle.mp3", "link":"", "color":"#56B0E8" });
 				jsonFluxPosition.positionflux.push({"flux":"sun2"});
 				
-				var jsonFluxActifs = JSON.parse('{"fluxactifs": {"noel":'+activeNoel+',"sports":'+activeSports+',"10080":'+active10080+',"franco":'+activefranco+'}}');
+				var jsonFluxActifs = JSON.parse('{"fluxactifs": {"noel":'+activeNoel+',"sports":'+activeSports+',"events":'+activeEvents+',"10080":'+active10080+',"franco":'+activefranco+'}}');
 				
 				console.log(jsonBase);
 				console.log(jsonFluxActifs);
@@ -676,6 +683,7 @@ function chargeMYflux(fluxnoel,fluxsports,flux10080,fluxfranco)
 				//document.getElementById("btn_dedicace_noel").style.display="none";
 				document.getElementById("btn_dedicace_franco").style.display="none";
 				document.getElementById("btn_dedicace_sports").style.display="none";
+				document.getElementById("btn_dedicace_events").style.display="none";
 				document.getElementById("btn_dedicace_10080").style.display="none";
 				document.getElementById("btn_dedicace_sun2").style.display="none";
 				
@@ -711,7 +719,7 @@ function chargeMYflux(fluxnoel,fluxsports,flux10080,fluxfranco)
 	});
 }
 
-function chargeMYflux2(fluxnoel,fluxsports,flux10080,fluxfranco)
+function chargeMYflux2(fluxnoel,fluxsports,fluxevents,flux10080,fluxfranco)
 {
 	Direct._imgPodcast = "http://www.lesonunique.com/appli/images/vinyl-disc-record-placemats.jpg";
 
@@ -724,6 +732,7 @@ function chargeMYflux2(fluxnoel,fluxsports,flux10080,fluxfranco)
 			{
 				var activeNoel = 0;
 				var activeSports = 0;
+				var activeEvents = 0;
 				var active10080 = 0;
 				var activefranco = 0;
 				
@@ -772,6 +781,12 @@ function chargeMYflux2(fluxnoel,fluxsports,flux10080,fluxfranco)
 					activeSports = 1;
 					jsonFluxPosition.positionflux.push({"flux":"sports"});
 				}
+				if(fluxevents == 1)
+				{
+					jsonBase.entries.push({"title":"SUN Event", "author":"WebRadio", "media":"http://80.82.229.202/sunext2.mp3", "link":"", "color":"#911818" });
+					activeEvents = 1;
+					jsonFluxPosition.positionflux.push({"flux":"events"});
+				}
 				if(flux10080 == 1)
 				{
 					jsonBase.entries.push({"title":"100%80", "author":"WebRadio", "media":"http://80.82.229.202/sun100-80.mp3", "link":"", "color":"#E1007A" });
@@ -782,7 +797,7 @@ function chargeMYflux2(fluxnoel,fluxsports,flux10080,fluxfranco)
 				jsonBase.entries.push({"title":"Dernier Podcast", "author":"SUN", "media":"jingle.mp3", "link":"", "color":"#56B0E8" });
 				jsonFluxPosition.positionflux.push({"flux":"sun2"});
 				
-				var jsonFluxActifs = JSON.parse('{"fluxactifs": {"noel":'+activeNoel+',"sports":'+activeSports+',"10080":'+active10080+',"franco":'+activefranco+'}}');
+				var jsonFluxActifs = JSON.parse('{"fluxactifs": {"noel":'+activeNoel+',"sports":'+activeSports+',"events":'+activeEvents+',"10080":'+active10080+',"franco":'+activefranco+'}}');
 				
 				console.log(jsonBase);
 				console.log(jsonFluxActifs);
@@ -941,6 +956,7 @@ g.change(function(event){
 			//$("#btn_dedicace_noel").hide();
 			$("#btn_dedicace_franco").hide();
 			$("#btn_dedicace_sports").hide();
+			$("#btn_dedicace_events").hide();
 			$("#btn_dedicace_sun2").hide();
 		}
 		
@@ -953,6 +969,7 @@ g.change(function(event){
 			//document.getElementById("btn_dedicace_noel").style.display="none";
 			document.getElementById("btn_dedicace_franco").style.display="none";
 			document.getElementById("btn_dedicace_sports").style.display="none";
+			document.getElementById("btn_dedicace_events").style.display="none";
 			document.getElementById("btn_dedicace_sun2").style.display="none";
 		}
 		/*else if((g.get('current'))==2)
@@ -960,6 +977,7 @@ g.change(function(event){
 			document.getElementById("btn_dedicace_sun").style.display="none";
 			document.getElementById("btn_dedicace_noel").style.display="block";
 			document.getElementById("btn_dedicace_sports").style.display="none";
+			document.getElementById("btn_dedicace_events").style.display="none";
 			document.getElementById("btn_dedicace_sun2").style.display="none";
 		}*/
 		else if((g.get('current'))==2)
@@ -967,6 +985,7 @@ g.change(function(event){
 			document.getElementById("btn_dedicace_sun").style.display="none";
 			document.getElementById("btn_dedicace_franco").style.display="block";
 			document.getElementById("btn_dedicace_sports").style.display="none";
+			document.getElementById("btn_dedicace_events").style.display="none";
 			document.getElementById("btn_dedicace_sun2").style.display="none";
 		}
 		else if((g.get('current'))==3)
@@ -975,6 +994,16 @@ g.change(function(event){
 			//document.getElementById("btn_dedicace_noel").style.display="none";
 			document.getElementById("btn_dedicace_franco").style.display="none";
 			document.getElementById("btn_dedicace_sports").style.display="block";
+			document.getElementById("btn_dedicace_events").style.display="none";
+			document.getElementById("btn_dedicace_sun2").style.display="none";
+		}
+		else if((g.get('current'))==4)
+		{
+			document.getElementById("btn_dedicace_sun").style.display="none";
+			//document.getElementById("btn_dedicace_noel").style.display="none";
+			document.getElementById("btn_dedicace_franco").style.display="none";
+			document.getElementById("btn_dedicace_sports").style.display="none";
+			document.getElementById("btn_dedicace_events").style.display="block";
 			document.getElementById("btn_dedicace_sun2").style.display="none";
 		}
 		else
@@ -983,6 +1012,7 @@ g.change(function(event){
 			//document.getElementById("btn_dedicace_noel").style.display="none";
 			document.getElementById("btn_dedicace_franco").style.display="none";
 			document.getElementById("btn_dedicace_sports").style.display="none";
+			document.getElementById("btn_dedicace_events").style.display="none";
 			document.getElementById("btn_dedicace_sun2").style.display="block";
 		}
 	}

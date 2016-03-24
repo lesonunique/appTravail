@@ -142,8 +142,8 @@ ConnectLogin = {
 																	'<span class="card-face__bullet"><img src="images/facebook-icon-no.png" /></span>'+
 																	'<img src="'+codeImg+'" width="110" height="110" draggable="false"/>'+
 																'</div>'+
-																'<!--<canvas class="canvasProg" id="canvasProgressSimple" width="160" height="160"></canvas>'+
-																'<span class="card-face__title"><img src="images/etoile.png" width="15" style="vertical-align: sub; margin-right:5px; margin-top:5px;" />60 points</span>-->'+
+																'<canvas class="canvasProg" id="canvasProgressSimple" width="160" height="160"></canvas>'+
+																'<span class="card-face__title"><!--<img src="images/etoile.png" width="15" style="vertical-align: sub; margin-right:5px; margin-top:5px;" />-->Temps entre chaque MySun<br/><span style="font-weight:bold;line-height:30px;">30min</span></span>'+
 																'<h2 class="card-face__name">'+account.name+'</h2>';
 									if(account.field_ville != '')
 									{
@@ -205,7 +205,7 @@ ConnectLogin = {
 									ConnectLogin._idUsr = account.uid;
 									ConnectLogin.nameUsr = account.name;
 									Playlist.init();
-									//dessinCercleFLAT("canvasProgressSimple", 60, 100);
+									dessinCercleFLAT("canvasProgressSimple", 60, 100);
 									ConnectLogin.lastMysun(account.uid);
 									ConnectLogin.fillProfilElements(codeImg,account.name,account.mail,account.field_telephone,account.field_date_de_naissance,account.field_sexe,account.field_adresse,account.field_ville);
 									ConnectLogin.goMessageConfirm(1,'Inscription réussie !');
@@ -307,8 +307,8 @@ ConnectLogin = {
 																	'<span class="card-face__bullet"><img src="images/facebook-icon-no.png" /></span>'+
 																	'<img src="'+codeImg+'" width="110" height="110" draggable="false"/>'+
 																'</div>'+
-																'<!--<canvas class="canvasProg" id="canvasProgressSimple" width="160" height="160"></canvas>'+
-																'<span class="card-face__title"><img src="images/etoile.png" width="15" style="vertical-align: sub; margin-right:5px; margin-top:5px;" />60 points</span>-->'+
+																'<canvas class="canvasProg" id="canvasProgressSimple" width="160" height="160"></canvas>'+
+																'<span class="card-face__title"><!--<img src="images/etoile.png" width="15" style="vertical-align: sub; margin-right:5px; margin-top:5px;" />-->Temps entre chaque MySun<br/><span style="font-weight:bold;line-height:30px;">30min</span></span>'+
 																'<h2 class="card-face__name">'+account.name+'</h2>';
 									if(account.field_ville != '')
 									{
@@ -370,7 +370,7 @@ ConnectLogin = {
 							ConnectLogin._idUsr = account.uid;
 							ConnectLogin.nameUsr = account.name;
 							Playlist.init();
-							//dessinCercleFLAT("canvasProgressSimple", 60, 100);
+							dessinCercleFLAT("canvasProgressSimple", 60, 100);
 							ConnectLogin.lastMysun(account.uid);
 							ConnectLogin.fillProfilElements(codeImg,account.name,account.mail,account.field_telephone,account.field_date_de_naissance,account.field_sexe,account.field_adresse,account.field_ville);
 							ConnectLogin.goMessageConfirm(1,'Connexion réussie !');
@@ -403,6 +403,9 @@ ConnectLogin = {
 			user_logout({
 				success:function(result){
 					//chargeMYflux2(1,1,0);
+					console.log(result);
+					console.log('deco');
+					
 					chargeMYflux2(0,1,0,1);
 					
 					localStorage.setItem("sessid","");
@@ -417,7 +420,7 @@ ConnectLogin = {
 					localStorage.setItem("dateUser","");
 					localStorage.setItem("imgUser","");
 					ConnectLogin.onlineUsr = false;
-					if (result[0]) {
+					//if (result[0]) {
 						console.log("Logged out!");
 						document.getElementById("statutLoginUser").innerHTML="Compte SUN";
 						document.getElementById("buttonLoginUser").innerHTML="<li class='profile0 active'><a href='#' data-role='button' id='button_signin' onclick='goRegisterForm();'>Sign In </a></li><li class='logout0'><a href='#' data-role='button' id='button_login' onclick='goLoginForm();'> Login</a></li><li class='facebook' onclick='ConnectLogin.connectFace();'><img src='images/facebook-icon.png' /></li><div class='clear'></div>";
@@ -434,7 +437,7 @@ ConnectLogin = {
 						
 						ConnectLogin._idUsr = '';
 						ConnectLogin.nameUsr = '';
-					}
+					//}
 					ConnectLogin.goMessageConfirm(2,'Déconnexion réussie !');
 				},
 				error:function(xhr, status, message){
@@ -747,8 +750,8 @@ ConnectLogin = {
 																	'<span class="card-face__bullet"><img src="'+fbTrueorFalse+'" /></span>'+
 																	'<img src="'+codeImg+'" width="110" height="110" draggable="false"/>'+
 																'</div>'+
-																'<!--<canvas class="canvasProg" id="canvasProgressSimple" width="160" height="160"></canvas>'+
-																'<span class="card-face__title"><img src="images/etoile.png" width="15" style="vertical-align: sub; margin-right:5px; margin-top:5px;" />60 points</span>-->'+
+																'<canvas class="canvasProg" id="canvasProgressSimple" width="160" height="160"></canvas>'+
+																'<span class="card-face__title"><!--<img src="images/etoile.png" width="15" style="vertical-align: sub; margin-right:5px; margin-top:5px;" />-->Temps entre chaque MySun<br/><span style="font-weight:bold;line-height:30px;">30min</span></span>'+
 																'<h2 class="card-face__name">'+account.name+'</h2>';
 									if(account.field_ville != '')
 									{
@@ -806,7 +809,7 @@ ConnectLogin = {
 							ConnectLogin._idUsr = result.user.uid;
 							ConnectLogin.nameUsr = result.user.name;
 							Playlist.init();
-							//dessinCercleFLAT("canvasProgressSimple", 60, 100);
+							dessinCercleFLAT("canvasProgressSimple", 60, 100);
 							ConnectLogin.lastMysun(result.user.uid);
 							ConnectLogin.fillProfilElements(codeImg,account.name,account.mail,account.field_telephone,account.field_date_de_naissance,account.field_sexe,account.field_adresse,account.field_ville);
 						}
@@ -914,8 +917,8 @@ ConnectLogin = {
 																	'<span class="card-face__bullet"><img src="'+fbTrueorFalse+'" /></span>'+
 																	'<img src="'+codeImg+'" width="110" height="110" draggable="false"/>'+
 																'</div>'+
-																'<!--<canvas class="canvasProg" id="canvasProgressSimple" width="160" height="160"></canvas>'+
-																'<span class="card-face__title"><img src="images/etoile.png" width="15" style="vertical-align: sub; margin-right:5px; margin-top:5px;" />60 points</span>-->'+
+																'<canvas class="canvasProg" id="canvasProgressSimple" width="160" height="160"></canvas>'+
+																'<span class="card-face__title"><!--<img src="images/etoile.png" width="15" style="vertical-align: sub; margin-right:5px; margin-top:5px;" />-->Temps entre chaque MySun<br/><span style="font-weight:bold;line-height:30px;">30min</span></span>'+
 																'<h2 class="card-face__name">'+account.name+'</h2>';
 									if(account.field_ville != '')
 									{
@@ -973,7 +976,7 @@ ConnectLogin = {
 							ConnectLogin._idUsr = result.user.uid;
 							ConnectLogin.nameUsr = result.user.name;
 							Playlist.init();
-							//dessinCercleFLAT("canvasProgressSimple", 60, 100);
+							dessinCercleFLAT("canvasProgressSimple", 60, 100);
 							ConnectLogin.lastMysun(result.user.uid);
 							ConnectLogin.fillProfilElements(codeImg,account.name,account.mail,account.field_telephone,account.field_date_de_naissance,account.field_sexe,account.field_adresse,account.field_ville);
 						}
@@ -1122,8 +1125,8 @@ ConnectLogin = {
 																	'<span class="card-face__bullet"><img src="images/facebook-icon.png" /></span>'+
 																	'<img src="'+codeImg+'" width="110" height="110" draggable="false"/>'+
 																'</div>'+
-																'<!--<canvas class="canvasProg" id="canvasProgressSimple" width="160" height="160"></canvas>'+
-																'<span class="card-face__title"><img src="images/etoile.png" width="15" style="vertical-align: sub; margin-right:5px; margin-top:5px;" />60 points</span>-->'+
+																'<canvas class="canvasProg" id="canvasProgressSimple" width="160" height="160"></canvas>'+
+																'<span class="card-face__title"><!--<img src="images/etoile.png" width="15" style="vertical-align: sub; margin-right:5px; margin-top:5px;" />-->Temps entre chaque MySun<br/><span style="font-weight:bold;line-height:30px;">30min</span></span>'+
 																'<h2 class="card-face__name">'+account.name+'</h2>';
 									if(account.field_ville != '')
 									{
@@ -1185,7 +1188,7 @@ ConnectLogin = {
 				ConnectLogin._idUsr = account.uid;
 				ConnectLogin.nameUsr = account.name;
 				Playlist.init();
-				//dessinCercleFLAT("canvasProgressSimple", 60, 100);
+				dessinCercleFLAT("canvasProgressSimple", 60, 100);
 				ConnectLogin.lastMysun(account.uid);
 				ConnectLogin.fillProfilElements(codeImg,account.name,account.mail,account.field_telephone,account.field_date_de_naissance,account.field_sexe,account.field_adresse,account.field_ville);
 				ConnectLogin.goMessageConfirm(1,'Connexion réussie !');
@@ -1415,6 +1418,14 @@ ConnectLogin = {
 			{
 				var sportsCHECK = '';
 			}
+			if(JSONperso.fluxactifs.events == 1)
+			{
+				var eventsCHECK = 'checked';
+			}
+			else
+			{
+				var eventsCHECK = '';
+			}
 			if(JSONperso.fluxactifs[10080] == 1)
 			{
 				var quatrevingtCHECK = 'checked';
@@ -1427,6 +1438,7 @@ ConnectLogin = {
 			// charger les flux dans connectlogin
 			profil3HTML +=		'<form>'+
 									'<p style="padding-top:20px;"><input type="checkbox" id="SELECTsports" '+sportsCHECK+' /><label for="SELECTsports"><span class="ui"></span>SUN Sports</label></p>'+
+									'<p><input type="checkbox" id="SELECTevents" '+eventsCHECK+' /><label for="SELECTevents"><span class="ui"></span>SUN Event</label></p>'+
 									//'<p><input type="checkbox" id="SELECTnoel" '+noelCHECK+' /><label for="SELECTnoel"><span class="ui"></span>SUN Noël</label></p>'+
 									'<p><input type="checkbox" id="SELECTfranco" '+francoCHECK+' /><label for="SELECTfranco"><span class="ui"></span>Franco SUN</label></p>'+
 									'<p style="padding-bottom:40px;"><input type="checkbox" id="SELECT10080" '+quatrevingtCHECK+' /><label for="SELECT10080"><span class="ui"></span>100%80</label></p>'+
@@ -1439,6 +1451,7 @@ ConnectLogin = {
 		{
 			profil3HTML +=		'<form>'+
 									'<p style="padding-top:20px;"><input type="checkbox" id="SELECTsports" checked /><label for="SELECTsports"><span class="ui"></span>SUN Sports</label></p>'+
+									'<p><input type="checkbox" id="SELECTevents" checked /><label for="SELECTevents"><span class="ui"></span>SUN Event</label></p>'+
 									//'<p><input type="checkbox" id="SELECTnoel" checked /><label for="SELECTnoel"><span class="ui"></span>SUN Noël</label></p>'+
 									'<p><input type="checkbox" id="SELECTfranco" checked /><label for="SELECTfranco"><span class="ui"></span>Franco SUN</label></p>'+
 									'<p style="padding-bottom:40px;"><input type="checkbox" id="SELECT10080" /><label for="SELECT10080"><span class="ui"></span>100%80</label></p>'+

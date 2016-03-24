@@ -70,8 +70,6 @@ Dedicace = {
 	
 	_txtSMSMySUN : '',
 	
-	_txtSMSMySUN2 : '',
-	
 	_rechercheMYSUNPlaylist : false,
 	
 	_rechercheStep : 0,
@@ -913,33 +911,41 @@ Dedicace = {
 		if(Dedicace._fluxMySUN == 1)
 		{
 			Dedicace._txtSMSMySUN = "sur SUN 93FM/RNT";
-			Dedicace._txtSMSMySUN2 = "sur SUN";
 		}
 		else if(Dedicace._fluxMySUN == 2)
 		{
 			Dedicace._txtSMSMySUN = "sur le flux SUN Noël de l'application et sur la RNT";
-			Dedicace._txtSMSMySUN2 = "sur SUN Noël";
 		}
 		else if(Dedicace._fluxMySUN == 3)
 		{
 			Dedicace._txtSMSMySUN = "sur SUN 93FM/RNT";
-			Dedicace._txtSMSMySUN2 = "sur SUN";
 		}
 		else if(Dedicace._fluxMySUN == 4)
 		{
 			Dedicace._txtSMSMySUN = "sur le flux 100%80 de l'application";
-			Dedicace._txtSMSMySUN2 = "sur 100%80";
 		}
 		else if(Dedicace._fluxMySUN == 5)
 		{
 			Dedicace._txtSMSMySUN = "sur le flux Franco SUN de l'application";
-			Dedicace._txtSMSMySUN2 = "sur Franco SUN";
 		}
 		else
 		{
 			Dedicace._txtSMSMySUN = 'sur SUN 93FM/RNT';
-			Dedicace._txtSMSMySUN2 = "sur SUN";
 		}
+		
+		console.log(Dedicace._json_info[0].artiste);
+		console.log(Dedicace._json_info[0].titre);
+		
+		var artist_temp = (Dedicace._json_info[0].artiste).replace(/\\/g,"\\\\");
+		artist_temp = artist_temp.replace(/\'/g,"\\'");
+		artist_temp = artist_temp.replace(/\"/g,"\\\"");
+		
+		var title_temp = (Dedicace._json_info[0].titre).replace(/\\/g,"\\\\");
+		title_temp = title_temp.replace(/\'/g,"\\'");
+		title_temp = title_temp.replace(/\"/g,"\\\"");
+		
+		console.log(artist_temp);
+		console.log(title_temp);
 		
         Dedicace._list_telephone_number = '';
         var content = ' <table cellpadding="0" cellspacing="0" border="0" class="table-dedicace">' +
@@ -1014,7 +1020,7 @@ Dedicace = {
                                         '<div style="margin-top:15px;">' +
                                             '<table width="100%">' +
                                                 '<tr>' +
-                                                    '<td width="50%"><div><a href="javascript:" onclick="Dedicace.sendDedicace(\''+Dedicace._json_info[0].artiste+'\',\''+Dedicace._json_info[0].titre+'\');" class="send2">Envoyer ma dédicace</a></div></td>' +
+                                                    '<td width="50%"><div><a href="javascript:" onclick="Dedicace.sendDedicace(\''+artist_temp+'\',\''+title_temp+'\');" class="send2">Envoyer ma dédicace</a></div></td>' +
 													
                                                 '</tr>' +
                                             '</table>' +
@@ -1196,13 +1202,23 @@ Dedicace = {
         //console.log('nb de tel : '+Dedicace._num_of_tel);
         var phoneNumber = Dedicace._list_telephone_number.split(',');
 		Dedicace._fingerid = fingerprint;
-		Dedicace._titreValidDiffus = titreDiffus;
-		Dedicace._artisteValidDiffus = artisteDiffus;
+		
+		Dedicace._titreValidDiffus = titreDiffus.replace(/\\/g,"\\\\");
+		Dedicace._titreValidDiffus = Dedicace._titreValidDiffus.replace(/\'/g,"\\'");
+		Dedicace._titreValidDiffus = Dedicace._titreValidDiffus.replace(/\"/g,"\\\"");
+		
+		Dedicace._artisteValidDiffus = artisteDiffus.replace(/\\/g,"\\\\");
+		Dedicace._artisteValidDiffus = Dedicace._artisteValidDiffus.replace(/\'/g,"\\'");
+		Dedicace._artisteValidDiffus = Dedicace._artisteValidDiffus.replace(/\"/g,"\\\"");
+		
 		console.log(Dedicace._fingerid);
-		PushbotsPlugin.getToken(function(token)
+		if(isphonegap == true)
 		{
-			Dedicace._tokenPUSH = token;
-		});
+			PushbotsPlugin.getToken(function(token)
+			{
+				Dedicace._tokenPUSH = token;
+			});
+		}
 		jembe.http.post({
             url: Dedicace._url_send_dedicace,
 			
@@ -1238,7 +1254,7 @@ Dedicace = {
 			    console.log('100 101 renvoi dédicace');
 				if(isphonegap == true)
 				{
-					/*var testTEXT = "Votre titre "+Dedicace._artisteValidDiffus+" - "+Dedicace._titreValidDiffus+" va être diffusé "+Dedicace._txtSMSMySUN2;
+					var testTEXT = "Votre titre "+Dedicace._artisteValidDiffus+" - "+Dedicace._titreValidDiffus+" va être diffusé sur SUN";
 					cordova.plugins.notification.local.schedule({
 						id         : Dedicace._json_callback_send_dedicace.id_selection_auditeur,
 						title      : 'MySun',
@@ -1246,7 +1262,7 @@ Dedicace = {
 						sound      : null,
 						autoClear  : true,
 						at         : new Date(moment(Dedicace._today).subtract(2, 'minutes'))
-					});*/
+					});
 					
 					navigator.notification.alert(Dedicace._json_callback_send_dedicace.message);
 				}
@@ -1316,10 +1332,13 @@ Dedicace = {
 					console.log('id_musique'+Dedicace._json_callback_send_dedicace.id_musique);
 					console.log('verrou'+Dedicace._json_callback_send_dedicace.verrou);
 					console.log('date_recherche='+Dedicace._json_callback_send_dedicace.timestamps);
-					PushbotsPlugin.getToken(function(token)
+					if(isphonegap == true)
 					{
-						Dedicace._tokenPUSH = token;
-					});
+						PushbotsPlugin.getToken(function(token)
+						{
+							Dedicace._tokenPUSH = token;
+						});
+					}
 			
 					jembe.http.post({
 					    url: Dedicace._url_send_dedicace,

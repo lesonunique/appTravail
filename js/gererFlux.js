@@ -10,8 +10,7 @@ GererFlux = {
 		var JSONperso0 = localStorage.getItem("fluxactifs");
 		var JSONperso = JSON.parse(JSONperso0);
 		console.log(JSONperso);
-		//chargeMYflux2(JSONperso.fluxactifs.noel,JSONperso.fluxactifs.sports,JSONperso.fluxactifs[10080]);
-		chargeMYflux2(0,JSONperso.fluxactifs.sports,JSONperso.fluxactifs[10080],JSONperso.fluxactifs.franco);
+		chargeMYflux2(0,JSONperso.fluxactifs.sports,JSONperso.fluxactifs.events,JSONperso.fluxactifs[10080],JSONperso.fluxactifs.franco);
     },
 	
 	listFlux: function () {
@@ -46,6 +45,15 @@ GererFlux = {
         	var fluxsports = 0;
         }
 		
+		if (document.getElementById('SELECTevents').checked) 
+		{
+        	var fluxevents = 1;
+        } 
+		else
+		{
+        	var fluxevents = 0;
+        }
+		
 		if (document.getElementById('SELECT10080').checked)
 		{
         	var flux10080 = 1;
@@ -55,8 +63,7 @@ GererFlux = {
         	var flux10080 = 0;
         }
 		
-		//chargeMYflux(fluxnoel,fluxsports,flux10080);
-		chargeMYflux(0,fluxsports,flux10080,fluxfranco);
+		chargeMYflux(0,fluxsports,fluxevents,flux10080,fluxfranco);
 	},
 	
 	viderFlux: function () {

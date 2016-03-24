@@ -59,7 +59,7 @@ function onDeviceReady() {
 	
 	if(isphonegap == true)
 	{
-		/*function events(action) {
+		function events(action) {
 			switch(action) {
 				case 'music-controls-next':
 					nextgear();
@@ -92,7 +92,7 @@ function onDeviceReady() {
 			}
 		}
 		MusicControls.subscribe(events);
-		MusicControls.listen();*/
+		MusicControls.listen();
 	}
 	
 	function successUUID(uuid)
@@ -150,6 +150,37 @@ function onDeviceReady() {
 				break;
 		}
 	});*/
+	
+	function onPhoneStateChanged(phoneState) 
+	{
+		switch (phoneState) {
+			case "RINGING":
+				console.log('Phone is ringing.');
+				break;
+			case "OFFHOOK":
+				console.log('Phone is off the hook.');
+				onRing = true;
+				break;
+			case "IDLE":
+				console.log('Phone has returned to the idle state.');
+				if(onRing == true)
+				{
+					onRing = false;
+					g.pause();
+    				g.play();
+				}
+				break;
+			default:
+				// no default...
+		}
+	}
+	
+	function onDeviceReady()
+	{
+		PhoneListener.start(onPhoneStateChanged);
+		// or...
+		// PhoneListener.stop(onSuccess,onError);
+	}
 	
 	function changeOrientation() {
 		switch (window.orientation) {
