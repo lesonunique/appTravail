@@ -68,7 +68,7 @@
 	<plugin name="cordova-plugin-android-support-v4" />
 	<plugin name="android.support.v13" />
 	<plugin name="https://github.com/hughisaacs2/Cordova-Android-TV-Plugin.git" />
-	<plugin name="com.xmartlabs.cordova.market" />
+	<plugin name="https://github.com/xmartlabs/cordova-plugin-market" />
 	<plugin name="org.pushandplay.cordova.apprate" />
 	<plugin name="cordova-plugin-crosswalk-webview" />
 	<plugin name="cordova-plugin-facebook4" />
