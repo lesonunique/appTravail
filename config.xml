@@ -74,7 +74,7 @@
 	<plugin name="cordova-plugin-globalization" />
 	<plugin name="cordova-plugin-music-controls" />
 	<plugin name="de.appplant.cordova.plugin.local-notification" />
-	<plugin name="hu.dpal.phonegap.plugins.ContactNumberPicker" />
+	<plugin name="hu.dpal.phonegap.plugins.contactnumberpicker" spec="0.1.1" source="pgb" />
 	<!--<plugin name="nl.kingsquare.cordova.background-audio" />-->
 	
 	
