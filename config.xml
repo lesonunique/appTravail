@@ -148,10 +148,11 @@
 	<allow-intent href="geo:*"/>
 	<allow-intent href="*"/>
 	
-	<plugin name="cordova-plugin-facebook4" spec="~1.3.0-0">
+	<!--<plugin name="cordova-plugin-facebook4" spec="~1.3.0-0">-->
+	<gap:plugin name="com.phonegap.plugins.facebookconnect" spec="0.9.0">
         <variable name="APP_ID" value="411982658915943" />
         <variable name="APP_NAME" value="Lesonunique" />
-    </plugin>
+    </gap:plugin>
     <preference name="AndroidPersistentFileLocation" value="Internal" />
     <preference name="AndroidPersistentFileLocation" value="Compatibility" />
     <preference name="iosPersistentFileLocation" value="Library" />
