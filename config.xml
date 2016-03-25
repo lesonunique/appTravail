@@ -34,8 +34,6 @@
     <preference name="DisallowOverscroll" value="true" />
 	 
 	<gap:platform name="winphone" />
-	<gap:platform name="winphone" />
-	<gap:platform name="winphone" />
 	
 	<!--<gap:plugin name="org.apache.cordova.camera" />
 	<gap:plugin name="org.apache.cordova.console" />
